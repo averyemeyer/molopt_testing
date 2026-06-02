@@ -14,6 +14,7 @@ where each entry is:
 
 import argparse
 import glob
+import heapq
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -35,15 +36,19 @@ def load_topk_curve(path, top_k=10):
 
     rows.sort(key=lambda row: row[0])
 
-    seen = []
     calls = []
     topk_scores = []
+    top_scores = []
+    top_sum = 0.0
 
     for call, score in rows:
-        seen.append(score)
-        top_scores = sorted(seen, reverse=True)[:top_k]
+        if len(top_scores) < top_k:
+            heapq.heappush(top_scores, score)
+            top_sum += score
+        elif score > top_scores[0]:
+            top_sum += score - heapq.heapreplace(top_scores, score)
         calls.append(call)
-        topk_scores.append(float(np.mean(top_scores)))
+        topk_scores.append(float(top_sum / len(top_scores)))
 
     return np.array(calls), np.array(topk_scores)
 

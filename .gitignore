@@ -18,3 +18,4 @@ checkpoints/
 # Very noisy ADMET model-progress log. Raw copy is retained in the source
 # mol-opt working tree but intentionally not committed here.
 logs/molopt-cfg-5454909.error
+logs/molopt-cfg-5461356.error

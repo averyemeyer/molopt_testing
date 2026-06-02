@@ -9,8 +9,12 @@ tables, and summary without committing the full raw MolOpt result tree.
 ## What Is Included
 
 - `summary_2026-06-02.md` - main narrative summary and takeaways
+- `RESULTS_INDEX.md` - where to find plots, tables, scripts, logs, and analyses
+- `oracle_time_run_analysis_2026-06-02.md` - oracle-call thresholds plus
+  time/resource estimates
 - `plots/medium/` - medium 1K cheap-oracle top10 comparison plots
-- `plots/full/` - full 10K QED/LogP pilot plots
+- `plots/full/` - full 10K QED/LogP/SAScore pilot plots, including top1,
+  top10, and top100 views
 - `tables/` - coverage, validation, audit, and metrics tables
 - `configs/` - YAML benchmark configs used for the runs
 - `scripts/` - runner, oracle, plotting, validation, and audit scripts
@@ -27,14 +31,10 @@ Main completed runs:
   - 3 seeds
   - 1,000 oracle calls
 - Full 10K pilot:
-  - Oracles: QED and LogP
+  - Oracles: QED, LogP, and SAScore
   - Algorithms: screening, Graph GA, SMILES GA, STONED, GPBO
   - 5 seeds
   - 10,000 oracle calls
-
-In-progress at initial commit:
-
-- Full 10K SA-score pilot, Slurm job `5458061`
 
 ## Key Takeaway
 
@@ -44,3 +44,5 @@ such as molecular weight, LogP, TPSA, HBA/HBD, and rotatable bonds should usuall
 be wrapped as desirability or constrained objectives rather than naively
 maximized.
 
+For tool-routing guidance, use `top10` as the main shortlist-quality metric,
+`top1` for single-hit discovery, and `top100` for broader pool improvement.

@@ -11,7 +11,11 @@ Example:
 
 import argparse
 import importlib
+import json
+import resource
+import time
 import traceback
+from datetime import datetime, timezone
 from pathlib import Path
 
 import torch
@@ -180,6 +184,39 @@ def debug_oracle(name, fn):
     return wrapped
 
 
+def utc_now_iso():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def resource_snapshot():
+    usage = resource.getrusage(resource.RUSAGE_SELF)
+    return {
+        "user_cpu_seconds": usage.ru_utime,
+        "system_cpu_seconds": usage.ru_stime,
+        "max_rss_kb": usage.ru_maxrss,
+    }
+
+
+def result_max_call(output_dir):
+    calls = []
+    for path in output_dir.glob("results_*.yaml"):
+        try:
+            import yaml
+
+            with path.open() as handle:
+                data = yaml.safe_load(handle) or {}
+            for values in data.values():
+                if isinstance(values, list) and len(values) >= 2:
+                    calls.append(int(values[1]))
+        except Exception:
+            continue
+    return max(calls) if calls else None
+
+
+def write_run_metadata(path, metadata):
+    path.write_text(json.dumps(metadata, indent=2, sort_keys=True) + "\n")
+
+
 def select_oracles(names):
     if names == ["all"]:
         return ALL_ORACLES
@@ -260,6 +297,25 @@ def run_optimizer(
             f"algorithm={algorithm_name} seed={seed} output={output_dir}"
         )
 
+        metadata_path = output_dir / "benchmark_run_metadata.json"
+        start_time = time.perf_counter()
+        start_resources = resource_snapshot()
+        metadata = {
+            "tier": tier_name,
+            "oracle": oracle_name,
+            "algorithm": algorithm_name,
+            "seed": seed,
+            "output_dir": str(output_dir),
+            "smi_file": smi_file,
+            "n_jobs": n_jobs,
+            "max_oracle_calls_configured": config["max_oracle_calls"],
+            "freq_log": config["freq_log"],
+            "patience": config["patience"],
+            "started_at_utc": utc_now_iso(),
+            "status": "running",
+        }
+        write_run_metadata(metadata_path, metadata)
+
         previous_default_dtype = torch.get_default_dtype()
         if algorithm_name != "gpbo":
             torch.set_default_dtype(torch.float32)
@@ -285,7 +341,10 @@ def run_optimizer(
                 optimize_kwargs["config"] = ALGORITHM_CONFIGS[algorithm_name]
 
             optimizer.optimize(**optimize_kwargs)
+            metadata["status"] = "succeeded"
         except Exception:
+            metadata["status"] = "failed"
+            metadata["exception"] = traceback.format_exc()
             print(
                 f"FAILED tier={tier_name} oracle={oracle_name} "
                 f"algorithm={algorithm_name} seed={seed} output={output_dir}"
@@ -295,6 +354,24 @@ def run_optimizer(
                 raise
         finally:
             torch.set_default_dtype(previous_default_dtype)
+            end_resources = resource_snapshot()
+            metadata.update(
+                {
+                    "finished_at_utc": utc_now_iso(),
+                    "elapsed_seconds": time.perf_counter() - start_time,
+                    "actual_max_oracle_call": result_max_call(output_dir),
+                    "user_cpu_seconds_delta": (
+                        end_resources["user_cpu_seconds"]
+                        - start_resources["user_cpu_seconds"]
+                    ),
+                    "system_cpu_seconds_delta": (
+                        end_resources["system_cpu_seconds"]
+                        - start_resources["system_cpu_seconds"]
+                    ),
+                    "max_rss_kb": end_resources["max_rss_kb"],
+                }
+            )
+            write_run_metadata(metadata_path, metadata)
 
 
 

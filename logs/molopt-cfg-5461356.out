@@ -1,0 +1,31 @@
+Tier config: {'max_oracle_calls': 100, 'seeds': [0], 'freq_log': 10, 'patience': 5}
+Selected oracles: herg, dili, clintox, mutagenicity, carcinogens
+Selected algorithms: graph_ga, screening, smiles_ga, stoned, graph_mcts, moldqn, gpbo, reinvent, reinvent_selfies, mimosa, selfies_ga
+Running tier=small oracle=herg algorithm=graph_ga seed=0 output=oracle_benchmark_results/small/herg/graph_ga/seed_0
+10/100 | avg_top1: 0.970 | avg_top10: 0.505 | avg_top100: 0.505 | avg_sa: 3.235 | div: 0.881
+20/100 | avg_top1: 0.970 | avg_top10: 0.655 | avg_top100: 0.485 | avg_sa: 3.164 | div: 0.885
+30/100 | avg_top1: 0.975 | avg_top10: 0.773 | avg_top100: 0.493 | avg_sa: 3.225 | div: 0.878
+40/100 | avg_top1: 0.975 | avg_top10: 0.804 | avg_top100: 0.488 | avg_sa: 3.113 | div: 0.874
+50/100 | avg_top1: 0.975 | avg_top10: 0.813 | avg_top100: 0.464 | avg_sa: 2.971 | div: 0.873
+60/100 | avg_top1: 0.975 | avg_top10: 0.845 | avg_top100: 0.455 | avg_sa: 2.993 | div: 0.870
+70/100 | avg_top1: 0.975 | avg_top10: 0.866 | avg_top100: 0.474 | avg_sa: 3.012 | div: 0.870
+80/100 | avg_top1: 0.975 | avg_top10: 0.917 | avg_top100: 0.495 | avg_sa: 2.988 | div: 0.872
+90/100 | avg_top1: 0.986 | avg_top10: 0.942 | avg_top100: 0.512 | avg_sa: 3.006 | div: 0.873
+100/100 | avg_top1: 0.986 | avg_top10: 0.953 | avg_top100: 0.507 | avg_sa: 2.975 | div: 0.870
+Logging final results...
+Saving molecules...
+Running tier=small oracle=herg algorithm=screening seed=0 output=oracle_benchmark_results/small/herg/screening/seed_0
+10/100 | avg_top1: 0.990 | avg_top10: 0.525 | avg_top100: 0.525 | avg_sa: 2.807 | div: 0.874
+20/100 | avg_top1: 0.990 | avg_top10: 0.813 | avg_top100: 0.510 | avg_sa: 2.815 | div: 0.869
+30/100 | avg_top1: 0.990 | avg_top10: 0.845 | avg_top100: 0.502 | avg_sa: 2.743 | div: 0.869
+40/100 | avg_top1: 0.990 | avg_top10: 0.871 | avg_top100: 0.520 | avg_sa: 2.711 | div: 0.869
+50/100 | avg_top1: 0.990 | avg_top10: 0.905 | avg_top100: 0.507 | avg_sa: 2.691 | div: 0.869
+60/100 | avg_top1: 0.990 | avg_top10: 0.930 | avg_top100: 0.515 | avg_sa: 2.811 | div: 0.872
+70/100 | avg_top1: 0.990 | avg_top10: 0.930 | avg_top100: 0.513 | avg_sa: 2.833 | div: 0.874
+80/100 | avg_top1: 0.990 | avg_top10: 0.933 | avg_top100: 0.513 | avg_sa: 2.839 | div: 0.873
+90/100 | avg_top1: 0.990 | avg_top10: 0.939 | avg_top100: 0.510 | avg_sa: 2.822 | div: 0.871
+100/100 | avg_top1: 0.990 | avg_top10: 0.939 | avg_top100: 0.510 | avg_sa: 2.862 | div: 0.872
+Logging final results...
+Saving molecules...
+Running tier=small oracle=herg algorithm=smiles_ga seed=0 output=oracle_benchmark_results/small/herg/smiles_ga/seed_0
+10/100 | avg_top1: 0.970 | avg_top10: 0.505 | avg_top100: 0.505 | avg_sa: 3.235 | div: 0.881
