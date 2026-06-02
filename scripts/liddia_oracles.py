@@ -1,155 +1,186 @@
-"""Simple oracle calls using evaluator tools, with RDKit fallbacks."""
+"""MolOpt scalar objectives backed by LIDDIA evaluator tool functions.
 
-from rdkit import Chem
+The evaluator tools are the source of truth for raw physicochemical and ADMET
+values. These wrappers only adapt direction where MolOpt needs a single scalar
+objective where higher is better.
+"""
+
+from pathlib import Path
 import math
 import pickle
-from pathlib import Path
-
-from rdkit.Chem import Crippen, Descriptors, Lipinski, QED, rdMolDescriptors
-
-try:
-    from evaluator.tools.physchem import calculate_sascore
-except ImportError:
-    _fscores = None
-
-    def _fragment_scores():
-        global _fscores
-        if _fscores is None:
-            scores_path = Path(__file__).resolve().parent / "oracle" / "fpscores.pkl"
-            raw_scores = pickle.load(open(scores_path, "rb"))
-            _fscores = {}
-            for row in raw_scores:
-                for bit_id in row[1:]:
-                    _fscores[bit_id] = float(row[0])
-        return _fscores
-
-    def calculate_sascore(smi):
-        mol = Chem.MolFromSmiles(smi)
-        if mol is None:
-            return None
-        fscores = _fragment_scores()
-        fp = rdMolDescriptors.GetMorganFingerprint(mol, 2)
-        fps = fp.GetNonzeroElements()
-        score1 = sum(fscores.get(bit_id, -4) * value for bit_id, value in fps.items())
-        score1 /= max(sum(fps.values()), 1)
-
-        n_atoms = mol.GetNumAtoms()
-        n_chiral = len(Chem.FindMolChiralCenters(mol, includeUnassigned=True))
-        ring_info = mol.GetRingInfo()
-        n_bridgeheads = rdMolDescriptors.CalcNumBridgeheadAtoms(mol)
-        n_spiro = rdMolDescriptors.CalcNumSpiroAtoms(mol)
-        n_macrocycles = sum(1 for ring in ring_info.AtomRings() if len(ring) > 8)
-
-        score2 = 0.0
-        score2 -= n_atoms**1.005 - n_atoms
-        score2 -= math.log10(n_chiral + 1)
-        score2 -= math.log10(n_spiro + 1)
-        score2 -= math.log10(n_bridgeheads + 1)
-        score2 -= math.log10(2) if n_macrocycles > 0 else 0
-
-        n_fragments = len(fps)
-        score3 = math.log(float(n_atoms) / n_fragments) * 0.5 if n_atoms > n_fragments else 0
-        sascore = score1 + score2 + score3
-
-        min_score = -4.0
-        max_score = 2.5
-        sascore = 11.0 - (sascore - min_score + 1) / (max_score - min_score) * 9.0
-        if sascore > 8.0:
-            sascore = 8.0 + math.log(sascore + 1.0 - 9.0)
-        if sascore > 10.0:
-            sascore = 10.0
-        if sascore < 1.0:
-            sascore = 1.0
-        return sascore
+import sys
 
 
-def _mol(smi):
-    return Chem.MolFromSmiles(smi)
+def _ensure_evaluator_on_path():
+    """Find the workspace parent that contains evaluator/ when run from mol-opt."""
+    here = Path(__file__).resolve()
+    for parent in here.parents:
+        if (parent / "evaluator").is_dir():
+            path = str(parent)
+            if path not in sys.path:
+                sys.path.insert(0, path)
+            return
 
 
-def _toxicity(smi):
-    try:
-        from evaluator.tools.admet import predict_toxicity
-    except ImportError as exc:
-        raise ImportError(
-            "ADMET oracles require evaluator.tools.admet to be importable."
-        ) from exc
-    return predict_toxicity(smi)
+_ensure_evaluator_on_path()
 
-def qed(smi):
-    mol = _mol(smi)
+from evaluator.tools import (  # noqa: E402
+    calculate_hba,
+    calculate_hbd,
+    calculate_logp,
+    calculate_molecular_weight,
+    calculate_qed,
+    calculate_rot_bonds,
+    calculate_sascore,
+    calculate_tpsa,
+    predict_toxicity,
+)
+
+_fscores = None
+
+
+def _fragment_scores():
+    global _fscores
+    if _fscores is None:
+        scores_path = Path(__file__).resolve().parent / "oracle" / "fpscores.pkl"
+        with scores_path.open("rb") as handle:
+            raw_scores = pickle.load(handle)
+        _fscores = {}
+        for row in raw_scores:
+            for bit_id in row[1:]:
+                _fscores[bit_id] = float(row[0])
+    return _fscores
+
+
+def _fallback_sascore(smiles):
+    from rdkit import Chem
+    from rdkit.Chem import rdMolDescriptors
+
+    mol = Chem.MolFromSmiles(smiles)
     if mol is None:
-        return 0
-    return QED.qed(mol) or 0
+        return None
+
+    fscores = _fragment_scores()
+    fp = rdMolDescriptors.GetMorganFingerprint(mol, 2)
+    fps = fp.GetNonzeroElements()
+    score1 = sum(fscores.get(bit_id, -4) * value for bit_id, value in fps.items())
+    score1 /= max(sum(fps.values()), 1)
+
+    n_atoms = mol.GetNumAtoms()
+    n_chiral = len(Chem.FindMolChiralCenters(mol, includeUnassigned=True))
+    ring_info = mol.GetRingInfo()
+    n_bridgeheads = rdMolDescriptors.CalcNumBridgeheadAtoms(mol)
+    n_spiro = rdMolDescriptors.CalcNumSpiroAtoms(mol)
+    n_macrocycles = sum(1 for ring in ring_info.AtomRings() if len(ring) > 8)
+
+    score2 = 0.0
+    score2 -= n_atoms**1.005 - n_atoms
+    score2 -= math.log10(n_chiral + 1)
+    score2 -= math.log10(n_spiro + 1)
+    score2 -= math.log10(n_bridgeheads + 1)
+    score2 -= math.log10(2) if n_macrocycles > 0 else 0
+
+    n_fragments = len(fps)
+    score3 = math.log(float(n_atoms) / n_fragments) * 0.5 if n_atoms > n_fragments else 0
+    sa_score = score1 + score2 + score3
+
+    min_score = -4.0
+    max_score = 2.5
+    sa_score = 11.0 - (sa_score - min_score + 1) / (max_score - min_score) * 9.0
+    if sa_score > 8.0:
+        sa_score = 8.0 + math.log(sa_score + 1.0 - 9.0)
+    if sa_score > 10.0:
+        sa_score = 10.0
+    if sa_score < 1.0:
+        sa_score = 1.0
+    return sa_score
 
 
-def sascore(smi):
-    sa = calculate_sascore(smi) or 10
-    return max(0, 10 - sa)
+def _raw_sascore(smiles):
+    raw_sa = calculate_sascore(smiles)
+    if raw_sa is not None:
+        return raw_sa
+    return _fallback_sascore(smiles)
 
 
-def mol_wt(smi):
-    mol = _mol(smi)
-    if mol is None:
-        return 0
-    return Descriptors.MolWt(mol) or 0
+def _as_score(value, default=0.0):
+    if value is None:
+        return default
+    return float(value)
 
 
-def logp(smi):
-    mol = _mol(smi)
-    if mol is None:
-        return 0
-    val = Crippen.MolLogP(mol)
-    return max(val, 0)
-
-def tpsa(smi):
-    mol = _mol(smi)
-    if mol is None:
-        return 0
-    return Descriptors.TPSA(mol) or 0
+def _toxicity(smiles):
+    return predict_toxicity(smiles)
 
 
-def hbd(smi):
-    mol = _mol(smi)
-    if mol is None:
-        return 0
-    return Lipinski.NumHDonors(mol) or 0
+def qed(smiles):
+    """Raw QED from evaluator; higher is better."""
+    return _as_score(calculate_qed(smiles))
 
 
-def hba(smi):
-    mol = _mol(smi)
-    if mol is None:
-        return 0
-    return Lipinski.NumHAcceptors(mol) or 0
+def sascore(smiles):
+    """Synthetic-accessibility desirability: raw SA is inverted."""
+    raw_sa = _raw_sascore(smiles)
+    if raw_sa is None:
+        return 0.0
+    return max(0.0, 10.0 - float(raw_sa))
 
 
-def rot_bonds(smi):
-    mol = _mol(smi)
-    if mol is None:
-        return 0
-    return Lipinski.NumRotatableBonds(mol) or 0
+def mol_wt(smiles):
+    """Raw exact molecular weight from evaluator."""
+    return _as_score(calculate_molecular_weight(smiles))
 
 
-def herg(smi):
-    tox = _toxicity(smi)
-    return 1 - (tox.get("hERG") or 0)
+def logp(smiles):
+    """Raw LogP from evaluator, clipped at zero for maximize-style benchmarking."""
+    return max(_as_score(calculate_logp(smiles)), 0.0)
 
 
-def dili(smi):
-    tox = _toxicity(smi)
-    return 1 - (tox.get("DILI") or 0)
+def tpsa(smiles):
+    """Raw TPSA from evaluator."""
+    return _as_score(calculate_tpsa(smiles))
 
 
-def clintox(smi):
-    tox = _toxicity(smi)
-    return 1 - (tox.get("ClinTox") or 0)
+def hbd(smiles):
+    """Raw hydrogen-bond donor count from evaluator."""
+    return _as_score(calculate_hbd(smiles))
 
 
-def mutagenicity(smi):
-    tox = _toxicity(smi)
-    return 1 - (tox.get("Mutagenicity") or 0)
+def hba(smiles):
+    """Raw hydrogen-bond acceptor count from evaluator."""
+    return _as_score(calculate_hba(smiles))
 
 
-def carcinogens(smi):
-    tox = _toxicity(smi)
-    return 1 - (tox.get("Carcinogens") or 0)
+def rot_bonds(smiles):
+    """Raw rotatable-bond count from evaluator."""
+    return _as_score(calculate_rot_bonds(smiles))
+
+
+def herg(smiles):
+    """hERG safety desirability: 1 - evaluator toxicity probability."""
+    tox = _toxicity(smiles)
+    return 1.0 - _as_score(tox.get("hERG"))
+
+
+def dili(smiles):
+    """DILI safety desirability: 1 - evaluator toxicity probability."""
+    tox = _toxicity(smiles)
+    return 1.0 - _as_score(tox.get("DILI"))
+
+
+def clintox(smiles):
+    """ClinTox safety desirability: 1 - evaluator toxicity probability."""
+    tox = _toxicity(smiles)
+    return 1.0 - _as_score(tox.get("ClinTox"))
+
+
+def mutagenicity(smiles):
+    """Mutagenicity safety desirability: 1 - evaluator toxicity probability."""
+    tox = _toxicity(smiles)
+    return 1.0 - _as_score(tox.get("Mutagenicity"))
+
+
+def carcinogens(smiles):
+    """Carcinogenicity safety desirability: 1 - evaluator toxicity probability."""
+    tox = _toxicity(smiles)
+    return 1.0 - _as_score(tox.get("Carcinogens"))

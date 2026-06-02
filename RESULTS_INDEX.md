@@ -38,7 +38,9 @@ MolOpt result tree. The most useful entry points are below.
 - `scripts/summarize_molopt_metrics.py` - per-run final top-k and AUC tables.
 - `scripts/summarize_molopt_thresholds.py` - call-to-threshold summaries.
 - `scripts/plot_molopt_benchmark_tier.py` - multi-algorithm comparison plots.
-- `scripts/liddia_oracles.py` - LIDDIA oracle wrappers used in this benchmark.
+- `scripts/liddia_oracles.py` - evaluator-backed LIDDIA oracle wrappers used
+  in this benchmark. Raw physchem/toxicity values come from `evaluator.tools`;
+  wrappers only adapt direction where MolOpt needs higher-is-better objectives.
 
 ## Logs
 
