@@ -4,12 +4,11 @@ Curated benchmark record for the LIDDIA/MolOpt optimizer tests prepared on
 2026-06-02.
 
 This repository is intentionally small: it keeps the scripts, configs, plots,
-tables, and meeting summary needed to explain the benchmarking process and
-takeaways without committing the full raw MolOpt result tree.
+tables, and summary without committing the full raw MolOpt result tree.
 
 ## What Is Included
 
-- `pi_meeting_summary_2026-06-02.md` - main narrative summary and takeaways
+- `summary_2026-06-02.md` - main narrative summary and takeaways
 - `plots/medium/` - medium 1K cheap-oracle top10 comparison plots
 - `plots/full/` - full 10K QED/LogP pilot plots
 - `tables/` - coverage, validation, audit, and metrics tables
