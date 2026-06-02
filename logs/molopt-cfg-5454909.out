@@ -1,0 +1,92 @@
+Tier config: {'max_oracle_calls': 1000, 'seeds': [0, 1, 2], 'freq_log': 50, 'patience': 10}
+Selected oracles: herg
+Selected algorithms: graph_ga, screening, smiles_ga, stoned, graph_mcts, moldqn, gpbo, reinvent, reinvent_selfies, mimosa, selfies_ga
+Skipping existing tier=medium oracle=herg algorithm=graph_ga seed=0 output=oracle_benchmark_results/medium/herg/graph_ga/seed_0
+Running tier=medium oracle=herg algorithm=graph_ga seed=1 output=oracle_benchmark_results/medium/herg/graph_ga/seed_1
+50/1000 | avg_top1: 0.975 | avg_top10: 0.813 | avg_top100: 0.464 | avg_sa: 2.971 | div: 0.873
+100/1000 | avg_top1: 0.986 | avg_top10: 0.953 | avg_top100: 0.507 | avg_sa: 2.975 | div: 0.870
+150/1000 | avg_top1: 0.999 | avg_top10: 0.978 | avg_top100: 0.690 | avg_sa: 3.132 | div: 0.887
+200/1000 | avg_top1: 0.999 | avg_top10: 0.986 | avg_top100: 0.801 | avg_sa: 3.250 | div: 0.893
+250/1000 | avg_top1: 1.000 | avg_top10: 0.993 | avg_top100: 0.878 | avg_sa: 3.352 | div: 0.897
+300/1000 | avg_top1: 1.000 | avg_top10: 0.997 | avg_top100: 0.945 | avg_sa: 3.507 | div: 0.903
+350/1000 | avg_top1: 1.000 | avg_top10: 0.998 | avg_top100: 0.973 | avg_sa: 3.646 | div: 0.900
+400/1000 | avg_top1: 1.000 | avg_top10: 0.998 | avg_top100: 0.984 | avg_sa: 3.768 | div: 0.899
+450/1000 | avg_top1: 1.000 | avg_top10: 0.998 | avg_top100: 0.988 | avg_sa: 3.858 | div: 0.899
+500/1000 | avg_top1: 1.000 | avg_top10: 0.998 | avg_top100: 0.991 | avg_sa: 3.757 | div: 0.895
+550/1000 | avg_top1: 1.000 | avg_top10: 0.999 | avg_top100: 0.993 | avg_sa: 3.736 | div: 0.897
+600/1000 | avg_top1: 1.000 | avg_top10: 0.999 | avg_top100: 0.995 | avg_sa: 3.810 | div: 0.894
+650/1000 | avg_top1: 1.000 | avg_top10: 0.999 | avg_top100: 0.996 | avg_sa: 3.857 | div: 0.894
+700/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.997 | avg_sa: 3.963 | div: 0.894
+750/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.998 | avg_sa: 4.156 | div: 0.887
+800/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.998 | avg_sa: 4.163 | div: 0.884
+850/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.999 | avg_sa: 4.231 | div: 0.878
+900/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.999 | avg_sa: 4.300 | div: 0.866
+950/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.999 | avg_sa: 4.439 | div: 0.855
+1000/1000 | avg_top1: 1.000 | avg_top10: 1.000 | avg_top100: 0.999 | avg_sa: 4.527 | div: 0.843
+Logging final results...
+Saving molecules...
+Skipping existing tier=medium oracle=herg algorithm=graph_ga seed=2 output=oracle_benchmark_results/medium/herg/graph_ga/seed_2
+Running tier=medium oracle=herg algorithm=screening seed=0 output=oracle_benchmark_results/medium/herg/screening/seed_0
+50/1000 | avg_top1: 0.990 | avg_top10: 0.905 | avg_top100: 0.507 | avg_sa: 2.691 | div: 0.869
+100/1000 | avg_top1: 0.990 | avg_top10: 0.939 | avg_top100: 0.510 | avg_sa: 2.862 | div: 0.872
+150/1000 | avg_top1: 0.990 | avg_top10: 0.958 | avg_top100: 0.679 | avg_sa: 2.908 | div: 0.882
+200/1000 | avg_top1: 0.990 | avg_top10: 0.975 | avg_top100: 0.747 | avg_sa: 2.978 | div: 0.886
+250/1000 | avg_top1: 0.990 | avg_top10: 0.977 | avg_top100: 0.790 | avg_sa: 3.099 | div: 0.887
+300/1000 | avg_top1: 0.997 | avg_top10: 0.981 | avg_top100: 0.823 | avg_sa: 3.106 | div: 0.890
+350/1000 | avg_top1: 0.997 | avg_top10: 0.983 | avg_top100: 0.850 | avg_sa: 3.087 | div: 0.892
+400/1000 | avg_top1: 0.997 | avg_top10: 0.989 | avg_top100: 0.871 | avg_sa: 3.249 | div: 0.893
+450/1000 | avg_top1: 0.997 | avg_top10: 0.990 | avg_top100: 0.890 | avg_sa: 3.201 | div: 0.892
+500/1000 | avg_top1: 0.997 | avg_top10: 0.990 | avg_top100: 0.900 | avg_sa: 3.206 | div: 0.892
+550/1000 | avg_top1: 0.997 | avg_top10: 0.991 | avg_top100: 0.910 | avg_sa: 3.185 | div: 0.892
+600/1000 | avg_top1: 0.997 | avg_top10: 0.991 | avg_top100: 0.919 | avg_sa: 3.132 | div: 0.890
+650/1000 | avg_top1: 0.997 | avg_top10: 0.992 | avg_top100: 0.924 | avg_sa: 3.158 | div: 0.892
+700/1000 | avg_top1: 0.997 | avg_top10: 0.992 | avg_top100: 0.932 | avg_sa: 3.165 | div: 0.890
+750/1000 | avg_top1: 0.997 | avg_top10: 0.992 | avg_top100: 0.935 | avg_sa: 3.219 | div: 0.891
+800/1000 | avg_top1: 0.997 | avg_top10: 0.992 | avg_top100: 0.938 | avg_sa: 3.221 | div: 0.890
+850/1000 | avg_top1: 0.997 | avg_top10: 0.992 | avg_top100: 0.942 | avg_sa: 3.188 | div: 0.889
+900/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.946 | avg_sa: 3.274 | div: 0.889
+950/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.949 | avg_sa: 3.228 | div: 0.888
+1000/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.953 | avg_sa: 3.225 | div: 0.887
+Logging final results...
+Saving molecules...
+Running tier=medium oracle=herg algorithm=screening seed=1 output=oracle_benchmark_results/medium/herg/screening/seed_1
+50/1000 | avg_top1: 0.985 | avg_top10: 0.840 | avg_top100: 0.415 | avg_sa: 3.188 | div: 0.879
+100/1000 | avg_top1: 0.985 | avg_top10: 0.929 | avg_top100: 0.461 | avg_sa: 3.174 | div: 0.880
+150/1000 | avg_top1: 0.985 | avg_top10: 0.951 | avg_top100: 0.646 | avg_sa: 3.081 | div: 0.884
+200/1000 | avg_top1: 0.999 | avg_top10: 0.970 | avg_top100: 0.747 | avg_sa: 3.016 | div: 0.885
+250/1000 | avg_top1: 0.999 | avg_top10: 0.971 | avg_top100: 0.789 | avg_sa: 2.987 | div: 0.886
+300/1000 | avg_top1: 0.999 | avg_top10: 0.974 | avg_top100: 0.811 | avg_sa: 3.065 | div: 0.886
+350/1000 | avg_top1: 0.999 | avg_top10: 0.975 | avg_top100: 0.824 | avg_sa: 3.054 | div: 0.886
+400/1000 | avg_top1: 0.999 | avg_top10: 0.989 | avg_top100: 0.859 | avg_sa: 3.070 | div: 0.886
+450/1000 | avg_top1: 0.999 | avg_top10: 0.989 | avg_top100: 0.867 | avg_sa: 3.123 | div: 0.887
+500/1000 | avg_top1: 0.999 | avg_top10: 0.990 | avg_top100: 0.877 | avg_sa: 3.127 | div: 0.886
+550/1000 | avg_top1: 0.999 | avg_top10: 0.990 | avg_top100: 0.901 | avg_sa: 3.149 | div: 0.886
+600/1000 | avg_top1: 0.999 | avg_top10: 0.993 | avg_top100: 0.914 | avg_sa: 3.139 | div: 0.885
+650/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.925 | avg_sa: 3.105 | div: 0.884
+700/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.929 | avg_sa: 3.138 | div: 0.884
+750/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.935 | avg_sa: 3.179 | div: 0.886
+800/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.936 | avg_sa: 3.194 | div: 0.885
+850/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.940 | avg_sa: 3.252 | div: 0.888
+900/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.946 | avg_sa: 3.213 | div: 0.886
+950/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.949 | avg_sa: 3.204 | div: 0.886
+1000/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.953 | avg_sa: 3.225 | div: 0.887
+Logging final results...
+Saving molecules...
+Running tier=medium oracle=herg algorithm=screening seed=2 output=oracle_benchmark_results/medium/herg/screening/seed_2
+50/1000 | avg_top1: 0.999 | avg_top10: 0.886 | avg_top100: 0.521 | avg_sa: 3.138 | div: 0.876
+100/1000 | avg_top1: 0.999 | avg_top10: 0.957 | avg_top100: 0.541 | avg_sa: 3.069 | div: 0.880
+150/1000 | avg_top1: 0.999 | avg_top10: 0.980 | avg_top100: 0.677 | avg_sa: 2.966 | div: 0.880
+200/1000 | avg_top1: 0.999 | avg_top10: 0.987 | avg_top100: 0.753 | avg_sa: 3.040 | div: 0.881
+250/1000 | avg_top1: 0.999 | avg_top10: 0.989 | avg_top100: 0.803 | avg_sa: 3.082 | div: 0.884
+300/1000 | avg_top1: 0.999 | avg_top10: 0.990 | avg_top100: 0.832 | avg_sa: 3.117 | div: 0.885
+350/1000 | avg_top1: 0.999 | avg_top10: 0.991 | avg_top100: 0.863 | avg_sa: 3.089 | div: 0.887
+400/1000 | avg_top1: 0.999 | avg_top10: 0.991 | avg_top100: 0.877 | avg_sa: 3.086 | div: 0.887
+450/1000 | avg_top1: 0.999 | avg_top10: 0.992 | avg_top100: 0.894 | avg_sa: 3.085 | div: 0.887
+500/1000 | avg_top1: 0.999 | avg_top10: 0.993 | avg_top100: 0.902 | avg_sa: 3.090 | div: 0.886
+550/1000 | avg_top1: 0.999 | avg_top10: 0.993 | avg_top100: 0.915 | avg_sa: 3.085 | div: 0.883
+600/1000 | avg_top1: 0.999 | avg_top10: 0.993 | avg_top100: 0.922 | avg_sa: 3.097 | div: 0.884
+650/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.927 | avg_sa: 3.172 | div: 0.886
+700/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.936 | avg_sa: 3.181 | div: 0.885
+750/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.940 | avg_sa: 3.207 | div: 0.888
+800/1000 | avg_top1: 0.999 | avg_top10: 0.994 | avg_top100: 0.944 | avg_sa: 3.212 | div: 0.888
+850/1000 | avg_top1: 0.999 | avg_top10: 0.995 | avg_top100: 0.947 | avg_sa: 3.223 | div: 0.888

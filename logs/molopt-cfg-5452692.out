@@ -1,0 +1,75 @@
+Tier config: {'max_oracle_calls': 1000, 'seeds': [0, 1, 2], 'freq_log': 50, 'patience': 10}
+Selected oracles: logp
+Selected algorithms: selfies_ga
+Running tier=medium oracle=logp algorithm=selfies_ga seed=0 output=oracle_benchmark_results/medium/logp/selfies_ga/seed_0
+50/1000 | avg_top1: 3.254 | avg_top10: 2.019 | avg_top100: 0.833 | avg_sa: 4.478 | div: 0.944
+100/1000 | avg_top1: 3.645 | avg_top10: 2.573 | avg_top100: 1.115 | avg_sa: 4.451 | div: 0.915
+150/1000 | avg_top1: 3.645 | avg_top10: 2.764 | avg_top100: 1.585 | avg_sa: 4.393 | div: 0.868
+200/1000 | avg_top1: 3.645 | avg_top10: 3.062 | avg_top100: 1.971 | avg_sa: 4.405 | div: 0.860
+250/1000 | avg_top1: 3.645 | avg_top10: 3.278 | avg_top100: 2.175 | avg_sa: 4.366 | div: 0.848
+300/1000 | avg_top1: 4.198 | avg_top10: 3.532 | avg_top100: 2.437 | avg_sa: 4.411 | div: 0.833
+350/1000 | avg_top1: 4.318 | avg_top10: 3.845 | avg_top100: 2.668 | avg_sa: 4.464 | div: 0.819
+400/1000 | avg_top1: 4.318 | avg_top10: 3.875 | avg_top100: 2.830 | avg_sa: 4.464 | div: 0.808
+450/1000 | avg_top1: 4.318 | avg_top10: 4.008 | avg_top100: 3.028 | avg_sa: 4.454 | div: 0.797
+500/1000 | avg_top1: 4.318 | avg_top10: 4.119 | avg_top100: 3.173 | avg_sa: 4.535 | div: 0.795
+550/1000 | avg_top1: 4.920 | avg_top10: 4.397 | avg_top100: 3.360 | avg_sa: 4.587 | div: 0.787
+600/1000 | avg_top1: 5.478 | avg_top10: 4.577 | avg_top100: 3.546 | avg_sa: 4.682 | div: 0.810
+650/1000 | avg_top1: 5.478 | avg_top10: 4.654 | avg_top100: 3.709 | avg_sa: 4.716 | div: 0.813
+700/1000 | avg_top1: 5.478 | avg_top10: 4.673 | avg_top100: 3.803 | avg_sa: 4.707 | div: 0.808
+750/1000 | avg_top1: 5.478 | avg_top10: 4.873 | avg_top100: 3.938 | avg_sa: 4.734 | div: 0.801
+800/1000 | avg_top1: 5.478 | avg_top10: 4.888 | avg_top100: 4.077 | avg_sa: 4.825 | div: 0.805
+850/1000 | avg_top1: 6.036 | avg_top10: 5.170 | avg_top100: 4.250 | avg_sa: 4.793 | div: 0.807
+900/1000 | avg_top1: 6.036 | avg_top10: 5.282 | avg_top100: 4.392 | avg_sa: 4.816 | div: 0.793
+950/1000 | avg_top1: 6.036 | avg_top10: 5.546 | avg_top100: 4.587 | avg_sa: 4.894 | div: 0.792
+1000/1000 | avg_top1: 6.260 | avg_top10: 5.707 | avg_top100: 4.723 | avg_sa: 4.963 | div: 0.792
+Logging final results...
+Saving molecules...
+Running tier=medium oracle=logp algorithm=selfies_ga seed=1 output=oracle_benchmark_results/medium/logp/selfies_ga/seed_1
+50/1000 | avg_top1: 2.478 | avg_top10: 1.924 | avg_top100: 0.846 | avg_sa: 4.153 | div: 0.939
+100/1000 | avg_top1: 3.254 | avg_top10: 2.522 | avg_top100: 1.139 | avg_sa: 4.264 | div: 0.914
+150/1000 | avg_top1: 3.254 | avg_top10: 2.781 | avg_top100: 1.628 | avg_sa: 4.278 | div: 0.878
+200/1000 | avg_top1: 3.328 | avg_top10: 3.115 | avg_top100: 2.000 | avg_sa: 4.211 | div: 0.856
+250/1000 | avg_top1: 4.208 | avg_top10: 3.358 | avg_top100: 2.203 | avg_sa: 4.212 | div: 0.837
+300/1000 | avg_top1: 4.208 | avg_top10: 3.472 | avg_top100: 2.409 | avg_sa: 4.330 | div: 0.837
+350/1000 | avg_top1: 4.208 | avg_top10: 3.579 | avg_top100: 2.587 | avg_sa: 4.430 | div: 0.831
+400/1000 | avg_top1: 4.208 | avg_top10: 3.682 | avg_top100: 2.761 | avg_sa: 4.512 | div: 0.821
+450/1000 | avg_top1: 5.225 | avg_top10: 4.187 | avg_top100: 3.030 | avg_sa: 4.637 | div: 0.818
+500/1000 | avg_top1: 5.225 | avg_top10: 4.351 | avg_top100: 3.169 | avg_sa: 4.676 | div: 0.818
+550/1000 | avg_top1: 6.564 | avg_top10: 4.890 | avg_top100: 3.403 | avg_sa: 4.648 | div: 0.805
+600/1000 | avg_top1: 6.564 | avg_top10: 5.048 | avg_top100: 3.554 | avg_sa: 4.689 | div: 0.806
+650/1000 | avg_top1: 6.564 | avg_top10: 5.253 | avg_top100: 3.766 | avg_sa: 4.707 | div: 0.806
+700/1000 | avg_top1: 6.564 | avg_top10: 5.504 | avg_top100: 3.940 | avg_sa: 4.772 | div: 0.811
+750/1000 | avg_top1: 6.564 | avg_top10: 5.671 | avg_top100: 4.218 | avg_sa: 4.820 | div: 0.801
+800/1000 | avg_top1: 6.850 | avg_top10: 5.934 | avg_top100: 4.415 | avg_sa: 4.823 | div: 0.788
+850/1000 | avg_top1: 6.850 | avg_top10: 6.057 | avg_top100: 4.620 | avg_sa: 4.902 | div: 0.773
+900/1000 | avg_top1: 6.850 | avg_top10: 6.258 | avg_top100: 4.879 | avg_sa: 4.929 | div: 0.752
+950/1000 | avg_top1: 6.850 | avg_top10: 6.335 | avg_top100: 5.081 | avg_sa: 4.947 | div: 0.748
+1000/1000 | avg_top1: 7.278 | avg_top10: 6.660 | avg_top100: 5.287 | avg_sa: 4.948 | div: 0.751
+Logging final results...
+Saving molecules...
+Running tier=medium oracle=logp algorithm=selfies_ga seed=2 output=oracle_benchmark_results/medium/logp/selfies_ga/seed_2
+50/1000 | avg_top1: 2.702 | avg_top10: 1.925 | avg_top100: 0.850 | avg_sa: 4.318 | div: 0.927
+100/1000 | avg_top1: 3.258 | avg_top10: 2.311 | avg_top100: 1.092 | avg_sa: 4.453 | div: 0.916
+150/1000 | avg_top1: 3.421 | avg_top10: 2.708 | avg_top100: 1.621 | avg_sa: 4.394 | div: 0.865
+200/1000 | avg_top1: 3.421 | avg_top10: 2.917 | avg_top100: 1.876 | avg_sa: 4.495 | div: 0.858
+250/1000 | avg_top1: 3.645 | avg_top10: 3.205 | avg_top100: 2.150 | avg_sa: 4.414 | div: 0.858
+300/1000 | avg_top1: 3.645 | avg_top10: 3.243 | avg_top100: 2.282 | avg_sa: 4.509 | div: 0.859
+350/1000 | avg_top1: 3.814 | avg_top10: 3.424 | avg_top100: 2.511 | avg_sa: 4.453 | div: 0.841
+400/1000 | avg_top1: 4.367 | avg_top10: 3.722 | avg_top100: 2.801 | avg_sa: 4.483 | div: 0.831
+450/1000 | avg_top1: 4.367 | avg_top10: 3.931 | avg_top100: 2.986 | avg_sa: 4.473 | div: 0.817
+500/1000 | avg_top1: 4.367 | avg_top10: 3.978 | avg_top100: 3.113 | avg_sa: 4.489 | div: 0.805
+550/1000 | avg_top1: 4.873 | avg_top10: 4.192 | avg_top100: 3.275 | avg_sa: 4.510 | div: 0.800
+600/1000 | avg_top1: 5.093 | avg_top10: 4.505 | avg_top100: 3.486 | avg_sa: 4.462 | div: 0.796
+650/1000 | avg_top1: 5.443 | avg_top10: 4.682 | avg_top100: 3.600 | avg_sa: 4.500 | div: 0.800
+700/1000 | avg_top1: 5.443 | avg_top10: 4.710 | avg_top100: 3.744 | avg_sa: 4.442 | div: 0.789
+750/1000 | avg_top1: 5.865 | avg_top10: 5.097 | avg_top100: 3.910 | avg_sa: 4.430 | div: 0.794
+800/1000 | avg_top1: 5.865 | avg_top10: 5.247 | avg_top100: 4.082 | avg_sa: 4.465 | div: 0.779
+850/1000 | avg_top1: 5.865 | avg_top10: 5.277 | avg_top100: 4.206 | avg_sa: 4.537 | div: 0.769
+900/1000 | avg_top1: 5.865 | avg_top10: 5.586 | avg_top100: 4.485 | avg_sa: 4.616 | div: 0.760
+950/1000 | avg_top1: 5.865 | avg_top10: 5.604 | avg_top100: 4.679 | avg_sa: 4.663 | div: 0.760
+1000/1000 | avg_top1: 6.234 | avg_top10: 5.857 | avg_top100: 4.880 | avg_sa: 4.679 | div: 0.763
+Logging final results...
+Saving molecules...
+Benchmark config: benchmark_configs/medium_logp_selfies_rerun.yaml
+Command:
+/users/PCON0041/mey200/.conda/envs/molopt-liddia/bin/python run_molopt_oracle_tests.py --tier medium --smi-file benchmark_inputs/zinc_sanity_1k.smi --output-root oracle_benchmark_results --n-jobs 1 --oracles logp --algorithms selfies_ga

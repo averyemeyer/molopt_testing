@@ -1,0 +1,25 @@
+name: full_cheap_pilot_qed_logp
+description: 10K-call pilot for paper-style curve comparison on bounded and exploitable cheap oracles.
+tier: full
+oracle_set: explicit
+oracles:
+  - qed
+  - logp
+algorithm_set: explicit
+algorithms:
+  - screening
+  - graph_ga
+  - smiles_ga
+  - stoned
+  - gpbo
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+notes:
+  objective_direction: maximize
+  seeds: full tier defaults to 0, 1, 2, 3, 4
+  budget: full tier defaults to 10000 oracle calls
+  reason: compare medium 1K trends against paper-style 10K optimization curves
+  scope: compact pilot; avoid 10K ADMET until medium toxicity behavior is understood

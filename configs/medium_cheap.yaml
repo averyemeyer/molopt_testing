@@ -1,0 +1,25 @@
+name: medium_cheap
+description: Medium-tier benchmark over all cheap LIDDIA physchem oracles.
+tier: medium
+oracle_set: cheap
+oracles:
+  - sascore
+  - qed
+  - mol_wt
+  - logp
+  - tpsa
+  - hbd
+  - hba
+  - rot_bonds
+algorithm_set: default
+algorithms:
+  - available
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+notes:
+  objective_direction: maximize
+  seeds: medium tier defaults to 0, 1, 2
+  budget: medium tier defaults to 1000 oracle calls

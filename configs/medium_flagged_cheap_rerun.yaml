@@ -1,0 +1,23 @@
+name: medium_flagged_cheap_rerun
+description: Clean rerun for cheap oracle rows flagged by score recomputation after fixing shared Oracle mol_buffer state.
+tier: medium
+oracle_set: explicit
+oracles:
+  - sascore
+  - mol_wt
+  - hba
+  - hbd
+  - rot_bonds
+algorithm_set: default
+algorithms:
+  - available
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: false
+continue_on_error: true
+notes:
+  objective_direction: maximize
+  seeds: medium tier defaults to 0, 1, 2
+  budget: medium tier defaults to 1000 oracle calls
+  reason: overwrite rows whose saved scores were inconsistent with recomputed cheap oracle values

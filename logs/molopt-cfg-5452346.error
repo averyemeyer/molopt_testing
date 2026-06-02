@@ -1,0 +1,1100 @@
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+1it [00:00,  4.62it/s][A
+67it [00:00, 263.67it/s][A
+140it [00:00, 429.06it/s][A
+202it [00:00, 490.75it/s][A
+263it [00:00, 526.47it/s][A
+325it [00:00, 555.42it/s][A
+396it [00:00, 602.62it/s][A
+466it [00:00, 629.85it/s][A500it [00:00, 511.08it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.02it/s]
+0it [00:00, ?it/s][A
+67it [00:00, 654.11it/s][A
+133it [00:00, 653.90it/s][A
+199it [00:00, 643.49it/s][A
+265it [00:00, 647.54it/s][A
+330it [00:00, 632.85it/s][A
+394it [00:00, 630.30it/s][A
+466it [00:00, 655.14it/s][A500it [00:00, 652.32it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.17it/s]
+0it [00:00, ?it/s][A
+71it [00:00, 702.03it/s][A
+142it [00:00, 661.38it/s][A
+209it [00:00, 638.47it/s][A
+274it [00:00, 642.54it/s][A
+339it [00:00, 641.85it/s][A
+406it [00:00, 647.06it/s][A
+477it [00:00, 667.06it/s][A500it [00:00, 649.95it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.23it/s]100%|██████████| 3/3 [00:02<00:00,  1.19it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+73it [00:00, 719.12it/s][A
+145it [00:00, 643.55it/s][A
+215it [00:00, 667.58it/s][A
+283it [00:00, 658.16it/s][A
+350it [00:00, 627.07it/s][A
+414it [00:00, 624.19it/s][A
+485it [00:00, 650.82it/s][A500it [00:00, 645.20it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.29it/s]
+0it [00:00, ?it/s][A
+61it [00:00, 597.52it/s][A
+129it [00:00, 643.99it/s][A
+194it [00:00, 645.73it/s][A
+259it [00:00, 636.02it/s][A
+324it [00:00, 639.33it/s][A
+391it [00:00, 647.92it/s][A
+459it [00:00, 653.39it/s][A500it [00:00, 642.71it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.29it/s]
+0it [00:00, ?it/s][A
+64it [00:00, 638.50it/s][A
+128it [00:00, 620.74it/s][A
+195it [00:00, 641.67it/s][A
+260it [00:00, 639.29it/s][A
+330it [00:00, 656.65it/s][A
+396it [00:00, 648.63it/s][A
+461it [00:00, 628.06it/s][A500it [00:00, 640.36it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.28it/s]100%|██████████| 3/3 [00:02<00:00,  1.28it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+63it [00:00, 628.66it/s][A
+134it [00:00, 675.78it/s][A
+202it [00:00, 651.74it/s][A
+275it [00:00, 678.89it/s][A
+343it [00:00, 663.34it/s][A
+410it [00:00, 664.99it/s][A
+477it [00:00, 641.84it/s][A500it [00:00, 654.15it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.31it/s]
+0it [00:00, ?it/s][A
+66it [00:00, 656.10it/s][A
+136it [00:00, 680.21it/s][A
+205it [00:00, 643.83it/s][A
+275it [00:00, 660.49it/s][A
+344it [00:00, 669.65it/s][A
+412it [00:00, 646.96it/s][A
+477it [00:00, 635.58it/s][A500it [00:00, 650.24it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.30it/s]
+0it [00:00, ?it/s][A
+62it [00:00, 616.65it/s][A
+125it [00:00, 623.40it/s][A
+192it [00:00, 643.37it/s][A
+257it [00:00, 640.50it/s][A
+329it [00:00, 667.53it/s][A
+396it [00:00, 659.69it/s][A
+462it [00:00, 653.40it/s][A500it [00:00, 649.59it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.30it/s]100%|██████████| 3/3 [00:02<00:00,  1.30it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+72it [00:00, 708.64it/s][A
+147it [00:00, 732.19it/s][A
+229it [00:00, 772.10it/s][A
+307it [00:00, 706.43it/s][A
+383it [00:00, 722.90it/s][A
+461it [00:00, 739.18it/s][A500it [00:00, 739.50it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.48it/s]
+0it [00:00, ?it/s][A
+74it [00:00, 733.57it/s][A
+150it [00:00, 744.66it/s][A
+228it [00:00, 752.67it/s][A
+307it [00:00, 766.93it/s][A
+384it [00:00, 735.72it/s][A
+458it [00:00, 729.74it/s][A500it [00:00, 737.10it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.48it/s]
+0it [00:00, ?it/s][A
+73it [00:00, 726.14it/s][A
+146it [00:00, 701.58it/s][A
+223it [00:00, 726.38it/s][A
+296it [00:00, 719.65it/s][A
+375it [00:00, 741.66it/s][A
+450it [00:00, 743.00it/s][A500it [00:00, 732.14it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.47it/s]100%|██████████| 3/3 [00:02<00:00,  1.47it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+67it [00:00, 663.47it/s][A
+136it [00:00, 678.79it/s][A
+211it [00:00, 710.29it/s][A
+292it [00:00, 749.51it/s][A
+370it [00:00, 759.15it/s][A
+446it [00:00, 709.90it/s][A500it [00:00, 723.62it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.45it/s]
+0it [00:00, ?it/s][A
+72it [00:00, 709.54it/s][A
+145it [00:00, 720.78it/s][A
+222it [00:00, 735.69it/s][A
+296it [00:00, 695.26it/s][A
+374it [00:00, 723.00it/s][A
+447it [00:00, 721.63it/s][A500it [00:00, 720.01it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.44it/s]
+0it [00:00, ?it/s][A
+68it [00:00, 679.14it/s][A
+138it [00:00, 683.66it/s][A
+218it [00:00, 730.78it/s][A
+292it [00:00, 706.87it/s][A
+363it [00:00, 701.81it/s][A
+444it [00:00, 734.03it/s][A500it [00:00, 715.31it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.44it/s]100%|██████████| 3/3 [00:02<00:00,  1.44it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+77it [00:00, 768.24it/s][A
+161it [00:00, 808.37it/s][A
+242it [00:00, 785.85it/s][A
+321it [00:00, 776.46it/s][A
+399it [00:00, 735.36it/s][A
+473it [00:00, 709.54it/s][A500it [00:00, 734.32it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.47it/s]
+0it [00:00, ?it/s][A
+70it [00:00, 698.85it/s][A
+150it [00:00, 748.42it/s][A
+230it [00:00, 764.48it/s][A
+307it [00:00, 738.19it/s][A
+381it [00:00, 718.91it/s][A
+458it [00:00, 732.57it/s][A500it [00:00, 730.30it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.46it/s]
+0it [00:00, ?it/s][A
+77it [00:00, 753.44it/s][A
+153it [00:00, 734.47it/s][A
+233it [00:00, 761.97it/s][A
+310it [00:00, 714.89it/s][A
+385it [00:00, 721.22it/s][A
+461it [00:00, 729.16it/s][A500it [00:00, 728.36it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.46it/s]100%|██████████| 3/3 [00:02<00:00,  1.46it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+69it [00:00, 687.18it/s][A
+156it [00:00, 791.49it/s][A
+236it [00:00, 776.73it/s][A
+314it [00:00, 754.02it/s][A
+390it [00:00, 745.28it/s][A
+469it [00:00, 756.45it/s][A500it [00:00, 758.59it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.52it/s]
+0it [00:00, ?it/s][A
+71it [00:00, 695.30it/s][A
+144it [00:00, 712.25it/s][A
+216it [00:00, 711.83it/s][A
+297it [00:00, 748.14it/s][A
+372it [00:00, 748.17it/s][A
+456it [00:00, 777.00it/s][A500it [00:00, 754.20it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.51it/s]
+0it [00:00, ?it/s][A
+79it [00:00, 773.08it/s][A
+157it [00:00, 759.41it/s][A
+233it [00:00, 736.79it/s][A
+313it [00:00, 757.37it/s][A
+391it [00:00, 763.09it/s][A
+468it [00:00, 744.02it/s][A500it [00:00, 749.60it/s]
+100%|██████████| 3/3 [00:01<00:00,  1.51it/s]100%|██████████| 3/3 [00:01<00:00,  1.51it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+80it [00:00, 791.03it/s][A
+160it [00:00, 750.36it/s][A
+236it [00:00, 724.99it/s][A
+315it [00:00, 748.09it/s][A
+390it [00:00, 730.80it/s][A
+470it [00:00, 749.04it/s][A500it [00:00, 753.08it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.51it/s]
+0it [00:00, ?it/s][A
+78it [00:00, 777.81it/s][A
+156it [00:00, 759.21it/s][A
+236it [00:00, 773.96it/s][A
+322it [00:00, 801.73it/s][A
+403it [00:00, 766.63it/s][A
+480it [00:00, 740.54it/s][A500it [00:00, 751.59it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.50it/s]
+0it [00:00, ?it/s][A
+82it [00:00, 809.05it/s][A
+163it [00:00, 725.36it/s][A
+240it [00:00, 737.67it/s][A
+315it [00:00, 727.36it/s][A
+396it [00:00, 753.53it/s][A
+476it [00:00, 768.56it/s][A500it [00:00, 748.06it/s]
+100%|██████████| 3/3 [00:01<00:00,  1.50it/s]100%|██████████| 3/3 [00:01<00:00,  1.50it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+81it [00:00, 804.16it/s][A
+162it [00:00, 753.51it/s][A
+238it [00:00, 753.18it/s][A
+314it [00:00, 750.27it/s][A
+390it [00:00, 710.40it/s][A
+470it [00:00, 737.61it/s][A500it [00:00, 754.29it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.51it/s]
+0it [00:00, ?it/s][A
+88it [00:00, 879.65it/s][A
+176it [00:00, 762.05it/s][A
+254it [00:00, 722.97it/s][A
+329it [00:00, 732.58it/s][A
+408it [00:00, 751.96it/s][A
+484it [00:00, 752.80it/s][A500it [00:00, 750.28it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.50it/s]
+0it [00:00, ?it/s][A
+77it [00:00, 760.50it/s][A
+154it [00:00, 766.04it/s][A
+237it [00:00, 794.99it/s][A
+317it [00:00, 742.86it/s][A
+398it [00:00, 759.93it/s][A
+475it [00:00, 739.38it/s][A500it [00:00, 747.97it/s]
+100%|██████████| 3/3 [00:01<00:00,  1.50it/s]100%|██████████| 3/3 [00:01<00:00,  1.50it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+76it [00:00, 742.34it/s][A
+157it [00:00, 774.72it/s][A
+235it [00:00, 743.44it/s][A
+310it [00:00, 724.87it/s][A
+385it [00:00, 733.24it/s][A
+459it [00:00, 708.89it/s][A500it [00:00, 727.04it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.45it/s]
+0it [00:00, ?it/s][A
+75it [00:00, 749.40it/s][A
+150it [00:00, 695.93it/s][A
+220it [00:00, 687.83it/s][A
+290it [00:00, 689.85it/s][A
+361it [00:00, 692.47it/s][A
+442it [00:00, 729.89it/s][A500it [00:00, 724.90it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.45it/s]
+0it [00:00, ?it/s][A
+67it [00:00, 660.91it/s][A
+139it [00:00, 687.29it/s][A
+218it [00:00, 733.60it/s][A
+292it [00:00, 721.45it/s][A
+367it [00:00, 728.93it/s][A
+440it [00:00, 699.46it/s][A500it [00:00, 721.31it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.45it/s]100%|██████████| 3/3 [00:02<00:00,  1.45it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+70it [00:00, 694.38it/s][A
+146it [00:00, 730.74it/s][A
+220it [00:00, 725.24it/s][A
+293it [00:00, 719.45it/s][A
+365it [00:00, 703.48it/s][A
+436it [00:00, 688.12it/s][A500it [00:00, 709.42it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.42it/s]
+0it [00:00, ?it/s][A
+68it [00:00, 675.71it/s][A
+138it [00:00, 688.70it/s][A
+212it [00:00, 706.40it/s][A
+285it [00:00, 711.54it/s][A
+358it [00:00, 717.17it/s][A
+430it [00:00, 704.19it/s][A500it [00:00, 706.37it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.41it/s]
+0it [00:00, ?it/s][A
+73it [00:00, 715.39it/s][A
+152it [00:00, 757.30it/s][A
+228it [00:00, 684.83it/s][A
+298it [00:00, 679.77it/s][A
+375it [00:00, 709.17it/s][A
+447it [00:00, 704.40it/s][A500it [00:00, 702.82it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.41it/s]100%|██████████| 3/3 [00:02<00:00,  1.41it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+78it [00:00, 763.00it/s][A
+155it [00:00, 744.87it/s][A
+230it [00:00, 740.58it/s][A
+306it [00:00, 745.78it/s][A
+388it [00:00, 770.20it/s][A
+466it [00:00, 712.18it/s][A500it [00:00, 735.13it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.47it/s]
+0it [00:00, ?it/s][A
+78it [00:00, 776.68it/s][A
+156it [00:00, 775.82it/s][A
+234it [00:00, 777.54it/s][A
+312it [00:00, 751.12it/s][A
+388it [00:00, 719.88it/s][A
+461it [00:00, 703.66it/s][A500it [00:00, 731.62it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.47it/s]
+0it [00:00, ?it/s][A
+76it [00:00, 753.93it/s][A
+154it [00:00, 766.10it/s][A
+231it [00:00, 684.43it/s][A
+303it [00:00, 692.78it/s][A
+381it [00:00, 715.50it/s][A
+463it [00:00, 746.55it/s][A500it [00:00, 730.30it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.46it/s]100%|██████████| 3/3 [00:02<00:00,  1.46it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+72it [00:00, 709.09it/s][A
+143it [00:00, 697.40it/s][A
+213it [00:00, 663.02it/s][A
+280it [00:00, 655.83it/s][A
+346it [00:00, 645.42it/s][A
+412it [00:00, 648.24it/s][A
+477it [00:00, 647.33it/s][A500it [00:00, 657.25it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.31it/s]
+0it [00:00, ?it/s][A
+69it [00:00, 684.07it/s][A
+140it [00:00, 694.74it/s][A
+210it [00:00, 655.38it/s][A
+276it [00:00, 642.69it/s][A
+342it [00:00, 645.38it/s][A
+407it [00:00, 642.14it/s][A
+474it [00:00, 649.11it/s][A500it [00:00, 653.50it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.31it/s]
+0it [00:00, ?it/s][A
+72it [00:00, 706.72it/s][A
+143it [00:00, 682.71it/s][A
+212it [00:00, 678.53it/s][A
+280it [00:00, 644.79it/s][A
+345it [00:00, 621.31it/s][A
+413it [00:00, 636.08it/s][A
+481it [00:00, 648.47it/s][A500it [00:00, 650.82it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.31it/s]100%|██████████| 3/3 [00:02<00:00,  1.31it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+64it [00:00, 634.84it/s][A
+128it [00:00, 628.13it/s][A
+192it [00:00, 628.96it/s][A
+255it [00:00, 611.08it/s][A
+317it [00:00, 608.37it/s][A
+378it [00:00, 607.52it/s][A
+453it [00:00, 650.73it/s][A500it [00:00, 647.35it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.29it/s]
+0it [00:00, ?it/s][A
+70it [00:00, 698.85it/s][A
+140it [00:00, 656.01it/s][A
+207it [00:00, 661.57it/s][A
+274it [00:00, 658.66it/s][A
+340it [00:00, 644.34it/s][A
+405it [00:00, 628.56it/s][A
+473it [00:00, 642.10it/s][A500it [00:00, 644.37it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.29it/s]
+0it [00:00, ?it/s][A
+57it [00:00, 563.70it/s][A
+122it [00:00, 612.69it/s][A
+186it [00:00, 624.07it/s][A
+252it [00:00, 637.94it/s][A
+320it [00:00, 651.30it/s][A
+386it [00:00, 652.32it/s][A
+457it [00:00, 667.72it/s][A500it [00:00, 641.11it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.29it/s]100%|██████████| 3/3 [00:02<00:00,  1.29it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+  0%|          | 0/3 [00:00<?, ?it/s]
+0it [00:00, ?it/s][A
+61it [00:00, 606.74it/s][A
+129it [00:00, 647.81it/s][A
+199it [00:00, 664.53it/s][A
+267it [00:00, 669.38it/s][A
+339it [00:00, 684.20it/s][A
+408it [00:00, 680.46it/s][A
+477it [00:00, 668.30it/s][A500it [00:00, 661.64it/s]
+ 33%|███▎      | 1/3 [00:00<00:01,  1.32it/s]
+0it [00:00, ?it/s][A
+71it [00:00, 707.39it/s][A
+142it [00:00, 665.49it/s][A
+209it [00:00, 635.74it/s][A
+275it [00:00, 643.99it/s][A
+354it [00:00, 692.79it/s][A
+424it [00:00, 665.20it/s][A
+491it [00:00, 654.45it/s][A500it [00:00, 659.44it/s]
+ 67%|██████▋   | 2/3 [00:01<00:00,  1.32it/s]
+0it [00:00, ?it/s][A
+76it [00:00, 749.40it/s][A
+151it [00:00, 682.86it/s][A
+220it [00:00, 682.69it/s][A
+289it [00:00, 648.00it/s][A
+356it [00:00, 652.62it/s][A
+422it [00:00, 648.20it/s][A
+488it [00:00, 650.62it/s][A500it [00:00, 657.20it/s]
+100%|██████████| 3/3 [00:02<00:00,  1.32it/s]100%|██████████| 3/3 [00:02<00:00,  1.32it/s]
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!
+MolFilter is using the following filters:
+Rule_Glaxo: True
+Rule_PAINS: True
+Rule_SureChEMBL: True
+Found local copy...
+Loading...
+Done!

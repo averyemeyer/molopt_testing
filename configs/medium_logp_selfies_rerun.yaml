@@ -1,0 +1,19 @@
+name: medium_logp_selfies_rerun
+description: Fill the remaining medium cheap benchmark gap for LogP SelfiesGA.
+tier: medium
+oracle_set: explicit
+oracles:
+  - logp
+algorithm_set: explicit
+algorithms:
+  - selfies_ga
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: false
+continue_on_error: false
+notes:
+  objective_direction: maximize
+  seeds: medium tier defaults to 0, 1, 2
+  budget: medium tier defaults to 1000 oracle calls
+  reason: complete the cheap/default matrix before generating benchmark plots

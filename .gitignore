@@ -1,0 +1,20 @@
+# Python/cache noise
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local/cluster scratch
+*.tmp
+*.bak
+.DS_Store
+
+# Avoid accidentally adding raw MolOpt benchmark trees here.
+# This repo is intended for curated benchmark artifacts only.
+oracle_benchmark_results/
+oracle_benchmark_plots/
+results/
+checkpoints/
+
+# Very noisy ADMET model-progress log. Raw copy is retained in the source
+# mol-opt working tree but intentionally not committed here.
+logs/molopt-cfg-5454909.error

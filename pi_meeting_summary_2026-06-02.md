@@ -1,0 +1,177 @@
+# MolOpt Benchmark Summary for PI Meeting
+
+## What We Ran
+
+- Completed the medium 1K-call cheap LIDDIA matrix:
+  - 8 cheap oracles
+  - 11 available/default algorithms
+  - 3 seeds each
+  - 264/264 seed runs complete
+- Generated top10 optimization-curve plots for all cheap oracles.
+- Ran a focused full-tier 10K pilot for paper-style comparison:
+  - Oracles: `qed`, `logp`
+  - Algorithms: `screening`, `graph_ga`, `smiles_ga`, `stoned`, `gpbo`
+  - 5 seeds each
+  - 50/50 seed runs complete
+
+## Test Set
+
+All runs used the same starter pool: `benchmark_inputs/zinc_sanity_1k.smi`.
+
+- Size: 1,000 starting SMILES
+- Source: reproducible reservoir sample from the MolOpt/ZINC starter data
+- Sampling seed: `0`, via `prepare_zinc_starters.py`
+- Intended role: a sanity/benchmark starter set, not a final production-scale chemical library
+
+This means the current comparison mainly tests optimizer/oracle behavior under matched starting conditions. It is good for comparing algorithms and detecting oracle exploitation. It is not yet a claim about broad chemical-space coverage.
+
+Benchmark budgets:
+
+- Medium tier: 1,000 oracle calls, seeds `0, 1, 2`
+- Full tier: 10,000 oracle calls, seeds `0, 1, 2, 3, 4`
+- Main metric plotted: top10 average score over oracle calls
+- Supporting metric: AUC of the top10 curve, which captures early optimization efficiency
+
+## 10K Pilot Results
+
+Mean final top10 score by algorithm:
+
+| Oracle | Rank | Algorithm | Final top10 | AUC top10 | Interpretation |
+| --- | ---: | --- | ---: | ---: | --- |
+| QED | 1 | STONED | 0.9480 | 0.9445 | Best final and early bounded-oracle performance |
+| QED | 2 | GPBO | 0.9472 | 0.9415 | Nearly tied with STONED |
+| QED | 3 | SMILES GA | 0.9446 | 0.9382 | Strong, stable |
+| QED | 4 | Graph GA | 0.9400 | 0.9126 | Good final score, slower/less efficient curve |
+| QED | 5 | Screening | 0.9361 | 0.9215 | Strong baseline due QED saturation |
+| LogP | 1 | STONED | 27.8167 | 17.7575 | Best final exploitable LogP score |
+| LogP | 2 | SMILES GA | 23.5262 | 19.5184 | Best AUC/early efficiency, second-best final |
+| LogP | 3 | GPBO | 20.7858 | 17.4568 | Strong, but behind string generative methods |
+| LogP | 4 | Graph GA | 17.3212 | 13.7947 | Improves over screening but lower than STONED/SMILES GA |
+| LogP | 5 | Screening | 5.7826 | 5.3347 | Baseline does not discover extreme LogP molecules |
+
+## Main Interpretation
+
+The medium 1K matrix showed that raw physchem objectives can be highly exploitable: algorithms that can grow molecules or exploit repeated motifs dominate objectives like molecular weight, TPSA, HBA/HBD, rotatable bonds, and LogP. The 10K pilot confirms this behavior at a paper-like budget.
+
+QED behaves differently. It is bounded and saturates quickly, so several methods converge near the same ceiling. On QED, final-score differences are small, and AUC/curve shape matters more than final top10 alone.
+
+LogP is the clearest stress test for exploitability. STONED reaches the highest final top10 score at 10K, while SMILES GA has the strongest AUC, suggesting better early optimization efficiency. Screening remains useful as a baseline but cannot compete on open-ended/exploitable objectives.
+
+## Story for Lead Optimizer
+
+- Benchmarking should not just ask which optimizer gets the highest score; it should ask which optimizer behaves appropriately for the oracle class.
+- For bounded lead-like objectives such as QED, multiple methods are competitive, and simpler baselines can be surprisingly strong.
+- For unbounded physchem objectives, high scores may reflect oracle exploitation rather than chemically desirable optimization.
+- Future `lead_optimizer` routing should distinguish:
+  - bounded desirability objectives,
+  - raw property-maximization objectives,
+  - toxicity/safety objectives,
+  - constrained multi-objective lead optimization.
+
+## Takeaways for Agent Integration
+
+### 1. The algorithms can follow the oracle signal, but oracle design matters
+
+The cheap-oracle matrix behaved coherently after fixing runner state/caching issues. The repaired medium cheap matrix passed validation and score recomputation:
+
+- 264/264 medium cheap seed runs complete
+- 0 validation-suspect files
+- 0 score-audit mismatches after reruns
+
+This supports using these algorithms as back-end optimization tools inside `lead_optimizer`. The larger risk is not that the methods ignore the oracle; it is that they may follow a poorly constrained oracle too well.
+
+For example, LogP, molecular weight, HBA/HBD, TPSA, and rotatable bonds are exploitable if optimized alone. High scores can come from larger or less lead-like structures. For agent use, these should usually be wrapped in constrained or composite objectives, not exposed as naive "maximize this raw property" instructions.
+
+### 2. Runtime depends strongly on oracle cost
+
+For cheap RDKit-style oracles, optimizer overhead dominates. These are feasible for broad sweeps and for interactive-ish batch use.
+
+For model-based ADMET oracles, oracle inference dominates. The hERG run completed only 6 medium seed runs in 12 hours, so ADMET should not be routed casually through the same broad benchmark setting.
+
+Observed practical averages:
+
+- Full 10K cheap pilot: 50 seed runs in 9:37:28, about 11-12 minutes per 10K seed run on average.
+- Medium hERG ADMET: 6 seed runs in 12:00:26, about 2 hours per 1K seed run.
+
+So a rough planning rule is:
+
+- Cheap oracle, 1K calls: minutes per seed
+- Cheap oracle, 10K calls: about 10-15 minutes per seed in the focused pilot
+- ADMET oracle, 1K calls: hours per seed unless batching/caching is improved
+
+### 3. Algorithm cost and behavior are different
+
+Qualitative cost/behavior from these runs:
+
+| Algorithm | Observed behavior | Practical integration role |
+| --- | --- | --- |
+| Screening | Cheap, stable baseline; strong when the starter set already contains good bounded-oracle molecules | Baseline/control, sanity check, low-risk first pass |
+| STONED | Strong final 10K performance on QED and LogP | Good default for cheap single-objective exploration |
+| SMILES GA | Strong early efficiency on 10K LogP; good at exploiting string/property objectives | Useful when budget is limited and objective is cheap |
+| GPBO | Very strong on many medium raw physchem objectives; near-top on QED | Useful for cheap scalar objectives, but watch scaling/overhead |
+| Graph GA | Reliable, interpretable graph-space optimizer; not always top final score | Good general-purpose baseline/generator |
+| SelfiesGA / REINVENT variants / MIMOSA / MolDQN / Graph MCTS | Mixed behavior across oracle classes | Keep available, but route selectively after more characterization |
+
+The key agent-level point: optimizer choice should be conditional on objective type, budget, and whether the oracle is bounded or exploitable.
+
+### 4. 10K pilot strengthens the paper-style comparison
+
+The 10K pilot reproduces the kind of story seen in molecular optimization benchmark papers: methods separate more clearly over a larger oracle-call budget, and the "best" method depends on oracle type.
+
+- On QED, methods cluster near the ceiling. Final top10 differences are small.
+- On LogP, the methods separate strongly. STONED has the best final top10, while SMILES GA has the best AUC/early efficiency.
+
+This is useful for PI discussion because it shows we are not just running toy checks. We can reproduce paper-style optimization curves and use them to reason about method/oracle pairings.
+
+### 5. Recommended lead-optimizer routing policy
+
+Initial routing recommendation:
+
+- For quick bounded desirability objectives like QED: use STONED, GPBO, SMILES GA, or Graph GA; screening is a good baseline.
+- For cheap property exploration where oracle exploitation is acceptable: STONED and SMILES GA are strong candidates.
+- For raw physchem objectives in lead optimization: avoid single-objective maximization; use constraints or composite scoring.
+- For ADMET/safety: do not run broad algorithm sweeps by default. Use targeted methods, small budgets, caching/batching, or post-filtering until ADMET scoring is optimized.
+- For agent instructions: always describe whether higher oracle score means "more of property" or "safer/more desirable," especially for toxicity scores transformed as `1 - predicted toxicity`.
+
+## Current Caveat
+
+ADMET/hERG scoring is much slower than cheap LIDDIA scoring. The first medium hERG slice timed out after completing `graph_ga` and `screening` only. We should pause ADMET for now or rerun it later with longer walltime/smaller algorithm slices.
+
+## Time and Resource Perspective
+
+All Slurm benchmark jobs used:
+
+- 1 node
+- 4 CPU cores
+- 1 A100 GPU
+- about 16 GB requested memory
+- 12-hour walltime limit in the current batch wrapper
+
+Observed runtimes for the most relevant jobs:
+
+| Job | Purpose | State | Runtime | Completed work |
+| --- | --- | --- | ---: | --- |
+| `5452346` | Medium cheap repair slice | Completed | 2:05:01 | Recomputed flagged cheap-oracle rows |
+| `5452692` | Medium `logp/selfies_ga` gap fill | Completed | 0:07:24 | Filled final 3 medium seed runs |
+| `5455029` | Full 10K QED/LogP pilot | Completed | 9:37:28 | 50 full-tier seed runs |
+| `5454909` | Medium hERG ADMET slice | Timed out | 12:00:26 | 6 medium seed runs |
+
+The cheap-oracle runtime is tractable. The full 10K pilot completed 50 seed runs in under 10 hours on one A100 job, or roughly 11-12 minutes per full-tier seed run on average across the selected methods.
+
+ADMET is the bottleneck. The hERG medium slice completed only 6 seed runs before the 12-hour time limit, roughly 2 hours per seed run. At that pace, a full hERG medium matrix across 11 algorithms and 3 seeds would require about 66 GPU-hours, and all five ADMET endpoints would require hundreds of GPU-hours if run the same way.
+
+Practical conclusion:
+
+- Cheap LIDDIA benchmarks are suitable for broad algorithm/oracle sweeps.
+- 10K cheap pilots are feasible for selected oracles and methods.
+- ADMET should be treated as a targeted follow-up, using fewer algorithms, longer walltime, or a more efficient batching/caching strategy.
+
+## Key Artifacts
+
+- Medium cheap plots: `oracle_benchmark_plots/medium/*_top10.png`
+- Full 10K pilot plots:
+  - `oracle_benchmark_plots/full/qed_top10.png`
+  - `oracle_benchmark_plots/full/logp_top10.png`
+- Full 10K metrics:
+  - `oracle_benchmark_results/full_pilot_qed_logp_metrics.csv`
+  - `oracle_benchmark_results/full_pilot_qed_logp_metrics.md`

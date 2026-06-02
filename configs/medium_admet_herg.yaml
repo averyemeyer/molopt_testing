@@ -1,0 +1,23 @@
+name: medium_admet_herg
+description: First ADMET/toxicity slice for hERG safety-score benchmarking.
+tier: medium
+oracle_set: explicit
+oracles:
+  - herg
+algorithm_set: default
+algorithms:
+  - available
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+env:
+  PYTHONPATH: /users/PCON0041/mey200/testing
+notes:
+  objective_direction: maximize
+  oracle_transform: hERG toxicity probability is converted to 1 - toxicity
+  interpretation: higher score means lower predicted hERG liability
+  seeds: medium tier defaults to 0, 1, 2
+  budget: medium tier defaults to 1000 oracle calls
+  reason: run ADMET in oracle-sized slices because ADMET-AI inference is slower than physchem scoring
