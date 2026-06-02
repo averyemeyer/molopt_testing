@@ -17,6 +17,9 @@ MolOpt result tree. The most useful entry points are below.
   - `top10` asks whether it can produce a robust shortlist.
   - `top100` asks whether it moves the broader candidate pool.
 - `plots/medium/` - 1K cheap-oracle matrix plots for the wider algorithm set.
+- `plots/part2_evaluator/` - separate evaluator-backed rescoring plots. These
+  preserve the original generated molecules and oracle-call order, but recompute
+  scores with evaluator-backed wrappers.
 
 ## Tables
 
@@ -26,6 +29,8 @@ MolOpt result tree. The most useful entry points are below.
   the mean top1 curve reaches each target threshold.
 - `tables/full_qed_logp_sascore_top10_thresholds.csv` - same for top10.
 - `tables/full_qed_logp_sascore_top100_thresholds.csv` - same for top100.
+- `tables/part2_evaluator/` - evaluator-backed rescoring metrics and
+  original-vs-part2 comparison tables.
 - `tables/metrics_medium.csv` - medium 1K cheap-oracle metrics.
 - `tables/coverage_medium.*`, `tables/validation_medium.csv`, and
   `tables/audit_medium_scores.csv` - coverage and correctness checks for the
@@ -41,6 +46,8 @@ MolOpt result tree. The most useful entry points are below.
 - `scripts/liddia_oracles.py` - evaluator-backed LIDDIA oracle wrappers used
   in this benchmark. Raw physchem/toxicity values come from `evaluator.tools`;
   wrappers only adapt direction where MolOpt needs higher-is-better objectives.
+- `scripts/rescore_molopt_results.py` - recompute saved MolOpt result scores
+  with the current oracle wrappers while preserving original call numbers.
 
 ## Logs
 
