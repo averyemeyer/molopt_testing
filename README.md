@@ -10,12 +10,9 @@ they cost to run, and how the agent should describe or route them.
 ## Main Questions
 
 1. Are the LIDDIA oracle wrappers defined consistently with the evaluator?
-2. Which algorithms follow which oracle classes well enough to use as tools?
-3. How many oracle calls and how much wall time are needed to reach useful
+2. How many oracle calls and how much wall time are needed to reach useful
    scores?
-4. Which objectives are safe desirability objectives, and which are raw
-   properties that need constraints?
-5. What caveats matter before exposing these optimizers to the lead-optimizer
+3. What caveats matter before exposing these optimizers to the lead-optimizer
    agent?
 
 ## Current Benchmark Scope
@@ -58,7 +55,7 @@ inputs/zinc_sanity_1k.smi
 The algorithms can follow the supplied oracle signal. The larger integration
 risk is oracle design: raw properties such as LogP, molecular weight, TPSA,
 HBA/HBD, and rotatable bonds can be exploited if the agent asks MolOpt to
-maximize them directly.
+maximize them directly. (need for thresholds and constrains in liddia_agent oracle defs) 
 
 For lead-optimizer use, bounded desirability objectives and transformed safety
 scores are safer defaults. Raw physicochemical properties should usually be
