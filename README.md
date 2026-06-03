@@ -1,48 +1,65 @@
 # MolOpt Testing Benchmarks
 
-Curated benchmark record for the LIDDIA/MolOpt optimizer tests prepared on
-2026-06-02.
+This repository is a curated record of MolOpt benchmark runs used to inform
+LIDDIA lead-optimizer agent integration.
 
-This repository is intentionally small: it keeps the scripts, configs, plots,
-tables, and summary without committing the full raw MolOpt result tree.
+The goal is not to declare one optimizer universally best. The goal is to learn
+which MolOpt algorithms are useful for different LIDDIA oracle types, how much
+they cost to run, and how the agent should describe or route them.
 
-## What Is Included
+## Main Questions
 
-- `summary_2026-06-02.md` - main narrative summary and takeaways
-- `RESULTS_INDEX.md` - where to find plots, tables, scripts, logs, and analyses
-- `oracle_time_run_analysis_2026-06-02.md` - oracle-call thresholds plus
-  time/resource estimates
-- `plots/medium/` - medium 1K cheap-oracle top10 comparison plots
-- `plots/full/` - full 10K QED/LogP/SAScore pilot plots, including top1,
-  top10, and top100 views
-- `tables/` - coverage, validation, audit, and metrics tables
-- `configs/` - YAML benchmark configs used for the runs
-- `scripts/` - runner, oracle, plotting, validation, and audit scripts
-- `inputs/zinc_sanity_1k.smi` - 1,000-SMILES starter set
-- `logs/` - selected Slurm stdout/stderr logs for provenance
+1. Are the LIDDIA oracle wrappers defined consistently with the evaluator?
+2. Which algorithms follow which oracle classes well enough to use as tools?
+3. How many oracle calls and how much wall time are needed to reach useful
+   scores?
+4. Which objectives are safe desirability objectives, and which are raw
+   properties that need constraints?
+5. What caveats matter before exposing these optimizers to the lead-optimizer
+   agent?
 
-## Benchmark Scope
+## Current Benchmark Scope
 
-Main completed runs:
-
-- Medium cheap LIDDIA matrix:
+- Medium cheap-oracle matrix:
   - 8 cheap oracles
-  - 11 available/default algorithms
+  - 11 algorithms
   - 3 seeds
   - 1,000 oracle calls
-- Full 10K pilot:
-  - Oracles: QED, LogP, and SAScore
-  - Algorithms: screening, Graph GA, SMILES GA, STONED, GPBO
+- Full cheap-oracle pilot:
+  - `qed`, `logp`, `sascore`
+  - 5 algorithms
   - 5 seeds
   - 10,000 oracle calls
+- Small ADMET/toxicity scout:
+  - `herg`, `dili`, `clintox`, `mutagenicity`, `carcinogens`
+  - 11 algorithms
+  - 1 seed
+  - 100 oracle calls
 
-## Key Takeaway
+All benchmark runs use the same 1,000-SMILES starter file:
 
-The optimizer stack can follow the supplied oracle signal, but raw physchem
-oracles are often exploitable. For lead-optimizer integration, raw descriptors
-such as molecular weight, LogP, TPSA, HBA/HBD, and rotatable bonds should usually
-be wrapped as desirability or constrained objectives rather than naively
-maximized.
+```text
+inputs/zinc_sanity_1k.smi
+```
 
-For tool-routing guidance, use `top10` as the main shortlist-quality metric,
-`top1` for single-hit discovery, and `top100` for broader pool improvement.
+## Key Files
+
+- `summary_2026-06-02.md` - plain-language summary and takeaways
+- `RESULTS_INDEX.md` - where plots, tables, configs, logs, and scripts live
+- `oracle_time_run_analysis_2026-06-02.md` - threshold/time/resource details
+- `scripts/liddia_oracles.py` - evaluator-backed MolOpt oracle wrappers
+- `plots/` - optimization curves
+- `tables/` - metrics, threshold tables, and comparisons
+- `configs/` - benchmark YAML configs
+- `logs/` - selected Slurm stdout logs for provenance
+
+## Short Takeaway
+
+The algorithms can follow the supplied oracle signal. The larger integration
+risk is oracle design: raw properties such as LogP, molecular weight, TPSA,
+HBA/HBD, and rotatable bonds can be exploited if the agent asks MolOpt to
+maximize them directly.
+
+For lead-optimizer use, bounded desirability objectives and transformed safety
+scores are safer defaults. Raw physicochemical properties should usually be
+used as constraints, target ranges, or terms in a composite score.
