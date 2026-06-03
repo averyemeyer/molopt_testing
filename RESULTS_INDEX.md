@@ -17,6 +17,8 @@ MolOpt result tree. The most useful entry points are below.
   - `top10` asks whether it can produce a robust shortlist.
   - `top100` asks whether it moves the broader candidate pool.
 - `plots/medium/` - 1K cheap-oracle matrix plots for the wider algorithm set.
+- `plots/small_admet/` - completed 100-call ADMET/toxicity scout plots for
+  hERG, DILI, ClinTox, mutagenicity, and carcinogenicity.
 - `plots/part2_evaluator/` - separate evaluator-backed rescoring plots. These
   preserve the original generated molecules and oracle-call order, but recompute
   scores with evaluator-backed wrappers.
@@ -32,6 +34,8 @@ MolOpt result tree. The most useful entry points are below.
 - `tables/part2_evaluator/` - evaluator-backed rescoring metrics and
   original-vs-part2 comparison tables.
 - `tables/metrics_medium.csv` - medium 1K cheap-oracle metrics.
+- `tables/small_admet/` - tox-only metrics and threshold tables for the
+  completed 55-run small ADMET scout.
 - `tables/coverage_medium.*`, `tables/validation_medium.csv`, and
   `tables/audit_medium_scores.csv` - coverage and correctness checks for the
   medium cheap matrix.

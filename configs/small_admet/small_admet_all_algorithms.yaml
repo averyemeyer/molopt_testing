@@ -1,0 +1,27 @@
+name: small_admet_all_algorithms
+description: Low-budget ADMET scout run over all toxicity endpoints and available/default algorithms.
+tier: small
+oracle_set: admet
+oracles:
+  - herg
+  - dili
+  - clintox
+  - mutagenicity
+  - carcinogens
+algorithm_set: default
+algorithms:
+  - available
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+env:
+  PYTHONPATH: /users/PCON0041/mey200/testing
+notes:
+  objective_direction: maximize
+  oracle_transform: toxicity probabilities are converted to 1 - toxicity
+  interpretation: higher scores mean lower predicted toxicity liability
+  seeds: small tier uses seed 0
+  budget: small tier uses 100 oracle calls
+  reason: breadth-first toxicity scout before spending medium/full budgets

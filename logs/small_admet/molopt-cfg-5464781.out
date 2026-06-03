@@ -1,0 +1,173 @@
+Tier config: {'max_oracle_calls': 100, 'seeds': [0], 'freq_log': 10, 'patience': 5}
+Selected oracles: carcinogens
+Selected algorithms: graph_ga, screening, smiles_ga, stoned, graph_mcts, moldqn, gpbo, reinvent, reinvent_selfies, mimosa, selfies_ga
+Running tier=small oracle=carcinogens algorithm=graph_ga seed=0 output=oracle_benchmark_results/small/carcinogens/graph_ga/seed_0
+10/100 | avg_top1: 0.985 | avg_top10: 0.855 | avg_top100: 0.855 | avg_sa: 3.235 | div: 0.881
+20/100 | avg_top1: 0.989 | avg_top10: 0.930 | avg_top100: 0.806 | avg_sa: 3.164 | div: 0.885
+30/100 | avg_top1: 0.989 | avg_top10: 0.967 | avg_top100: 0.823 | avg_sa: 3.225 | div: 0.878
+40/100 | avg_top1: 0.989 | avg_top10: 0.973 | avg_top100: 0.832 | avg_sa: 3.113 | div: 0.874
+50/100 | avg_top1: 0.989 | avg_top10: 0.975 | avg_top100: 0.831 | avg_sa: 2.971 | div: 0.873
+60/100 | avg_top1: 0.989 | avg_top10: 0.975 | avg_top100: 0.826 | avg_sa: 2.993 | div: 0.870
+70/100 | avg_top1: 0.989 | avg_top10: 0.977 | avg_top100: 0.821 | avg_sa: 3.012 | div: 0.870
+80/100 | avg_top1: 0.989 | avg_top10: 0.978 | avg_top100: 0.817 | avg_sa: 2.988 | div: 0.872
+90/100 | avg_top1: 0.994 | avg_top10: 0.981 | avg_top100: 0.817 | avg_sa: 3.006 | div: 0.873
+100/100 | avg_top1: 0.994 | avg_top10: 0.981 | avg_top100: 0.823 | avg_sa: 2.975 | div: 0.870
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=screening seed=0 output=oracle_benchmark_results/small/carcinogens/screening/seed_0
+10/100 | avg_top1: 0.979 | avg_top10: 0.734 | avg_top100: 0.734 | avg_sa: 2.807 | div: 0.874
+20/100 | avg_top1: 0.992 | avg_top10: 0.914 | avg_top100: 0.758 | avg_sa: 2.815 | div: 0.869
+30/100 | avg_top1: 0.992 | avg_top10: 0.947 | avg_top100: 0.762 | avg_sa: 2.743 | div: 0.869
+40/100 | avg_top1: 0.992 | avg_top10: 0.962 | avg_top100: 0.760 | avg_sa: 2.711 | div: 0.869
+50/100 | avg_top1: 0.992 | avg_top10: 0.966 | avg_top100: 0.755 | avg_sa: 2.691 | div: 0.869
+60/100 | avg_top1: 0.992 | avg_top10: 0.975 | avg_top100: 0.745 | avg_sa: 2.811 | div: 0.872
+70/100 | avg_top1: 0.992 | avg_top10: 0.977 | avg_top100: 0.754 | avg_sa: 2.833 | div: 0.874
+80/100 | avg_top1: 0.992 | avg_top10: 0.977 | avg_top100: 0.766 | avg_sa: 2.839 | div: 0.873
+90/100 | avg_top1: 0.992 | avg_top10: 0.977 | avg_top100: 0.762 | avg_sa: 2.822 | div: 0.871
+100/100 | avg_top1: 0.997 | avg_top10: 0.982 | avg_top100: 0.762 | avg_sa: 2.862 | div: 0.872
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=smiles_ga seed=0 output=oracle_benchmark_results/small/carcinogens/smiles_ga/seed_0
+10/100 | avg_top1: 0.985 | avg_top10: 0.855 | avg_top100: 0.855 | avg_sa: 3.235 | div: 0.881
+20/100 | avg_top1: 0.989 | avg_top10: 0.930 | avg_top100: 0.806 | avg_sa: 3.164 | div: 0.885
+30/100 | avg_top1: 0.989 | avg_top10: 0.967 | avg_top100: 0.823 | avg_sa: 3.225 | div: 0.878
+40/100 | avg_top1: 0.989 | avg_top10: 0.973 | avg_top100: 0.832 | avg_sa: 3.113 | div: 0.874
+50/100 | avg_top1: 0.989 | avg_top10: 0.975 | avg_top100: 0.831 | avg_sa: 2.971 | div: 0.873
+60/100 | avg_top1: 0.989 | avg_top10: 0.975 | avg_top100: 0.817 | avg_sa: 3.106 | div: 0.872
+70/100 | avg_top1: 0.989 | avg_top10: 0.979 | avg_top100: 0.824 | avg_sa: 3.212 | div: 0.870
+80/100 | avg_top1: 0.989 | avg_top10: 0.980 | avg_top100: 0.821 | avg_sa: 3.280 | div: 0.870
+90/100 | avg_top1: 0.989 | avg_top10: 0.980 | avg_top100: 0.826 | avg_sa: 3.338 | div: 0.870
+100/100 | avg_top1: 0.989 | avg_top10: 0.980 | avg_top100: 0.832 | avg_sa: 3.451 | div: 0.871
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=stoned seed=0 output=oracle_benchmark_results/small/carcinogens/stoned/seed_0
+10/100 | avg_top1: 0.985 | avg_top10: 0.805 | avg_top100: 0.805 | avg_sa: 2.809 | div: 0.859
+20/100 | avg_top1: 0.985 | avg_top10: 0.935 | avg_top100: 0.791 | avg_sa: 2.894 | div: 0.869
+30/100 | avg_top1: 0.985 | avg_top10: 0.960 | avg_top100: 0.786 | avg_sa: 2.956 | div: 0.874
+40/100 | avg_top1: 0.986 | avg_top10: 0.970 | avg_top100: 0.806 | avg_sa: 3.102 | div: 0.878
+50/100 | avg_top1: 0.986 | avg_top10: 0.970 | avg_top100: 0.804 | avg_sa: 3.019 | div: 0.877
+60/100 | avg_top1: 0.986 | avg_top10: 0.971 | avg_top100: 0.784 | avg_sa: 2.964 | div: 0.876
+70/100 | avg_top1: 0.986 | avg_top10: 0.971 | avg_top100: 0.778 | avg_sa: 2.942 | div: 0.877
+80/100 | avg_top1: 0.986 | avg_top10: 0.976 | avg_top100: 0.788 | avg_sa: 2.969 | div: 0.878
+90/100 | avg_top1: 0.986 | avg_top10: 0.978 | avg_top100: 0.778 | avg_sa: 2.982 | div: 0.876
+100/100 | avg_top1: 0.988 | avg_top10: 0.980 | avg_top100: 0.771 | avg_sa: 2.965 | div: 0.876
+max oracle hit, abort ...... 
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=graph_mcts seed=0 output=oracle_benchmark_results/small/carcinogens/graph_mcts/seed_0
+10/100 | avg_top1: 0.859 | avg_top10: 0.534 | avg_top100: 0.534 | avg_sa: 2.771 | div: 0.933
+20/100 | avg_top1: 0.859 | avg_top10: 0.686 | avg_top100: 0.541 | avg_sa: 2.851 | div: 0.866
+30/100 | avg_top1: 0.859 | avg_top10: 0.686 | avg_top100: 0.460 | avg_sa: 3.273 | div: 0.854
+40/100 | avg_top1: 0.859 | avg_top10: 0.718 | avg_top100: 0.485 | avg_sa: 3.479 | div: 0.877
+50/100 | avg_top1: 0.859 | avg_top10: 0.748 | avg_top100: 0.521 | avg_sa: 3.486 | div: 0.882
+60/100 | avg_top1: 0.907 | avg_top10: 0.802 | avg_top100: 0.559 | avg_sa: 3.565 | div: 0.888
+70/100 | avg_top1: 0.907 | avg_top10: 0.804 | avg_top100: 0.538 | avg_sa: 3.579 | div: 0.894
+80/100 | avg_top1: 0.907 | avg_top10: 0.804 | avg_top100: 0.524 | avg_sa: 3.728 | div: 0.890
+90/100 | avg_top1: 0.921 | avg_top10: 0.833 | avg_top100: 0.543 | avg_sa: 3.614 | div: 0.898
+100/100 | avg_top1: 0.921 | avg_top10: 0.834 | avg_top100: 0.557 | avg_sa: 3.691 | div: 0.894
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=moldqn seed=0 output=oracle_benchmark_results/small/carcinogens/moldqn/seed_0
+Using Device: cuda:0
+Print Q function architecture:
+MultiLayerNetwork(
+  (dense): Sequential(
+    (dense_1): Linear(in_features=1025, out_features=512, bias=True)
+    (ReLU_1): ReLU()
+    (Dropout_1): Dropout(p=0, inplace=False)
+    (dense_2): NoisyLinear()
+  )
+)
+10/100 | avg_top1: 0.823 | avg_top10: 0.562 | avg_top100: 0.562 | avg_sa: 4.972 | div: 0.894
+20/100 | avg_top1: 0.823 | avg_top10: 0.656 | avg_top100: 0.412 | avg_sa: 4.899 | div: 0.851
+30/100 | avg_top1: 0.823 | avg_top10: 0.656 | avg_top100: 0.352 | avg_sa: 5.229 | div: 0.860
+40/100 | avg_top1: 0.823 | avg_top10: 0.661 | avg_top100: 0.343 | avg_sa: 5.269 | div: 0.859
+50/100 | avg_top1: 0.823 | avg_top10: 0.678 | avg_top100: 0.342 | avg_sa: 5.059 | div: 0.884
+60/100 | avg_top1: 0.834 | avg_top10: 0.723 | avg_top100: 0.375 | avg_sa: 4.907 | div: 0.887
+70/100 | avg_top1: 0.834 | avg_top10: 0.751 | avg_top100: 0.378 | avg_sa: 4.830 | div: 0.896
+80/100 | avg_top1: 0.834 | avg_top10: 0.761 | avg_top100: 0.356 | avg_sa: 4.807 | div: 0.894
+90/100 | avg_top1: 0.834 | avg_top10: 0.762 | avg_top100: 0.340 | avg_sa: 4.739 | div: 0.897
+100/100 | avg_top1: 0.906 | avg_top10: 0.842 | avg_top100: 0.372 | avg_sa: 4.712 | div: 0.902
+max oracle hit... abort!
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=gpbo seed=0 output=oracle_benchmark_results/small/carcinogens/gpbo/seed_0
+10/100 | avg_top1: 0.994 | avg_top10: 0.788 | avg_top100: 0.788 | avg_sa: 2.787 | div: 0.886
+20/100 | avg_top1: 0.994 | avg_top10: 0.916 | avg_top100: 0.785 | avg_sa: 2.879 | div: 0.886
+30/100 | avg_top1: 0.994 | avg_top10: 0.929 | avg_top100: 0.768 | avg_sa: 2.906 | div: 0.885
+40/100 | avg_top1: 0.994 | avg_top10: 0.953 | avg_top100: 0.788 | avg_sa: 2.997 | div: 0.882
+50/100 | avg_top1: 0.994 | avg_top10: 0.959 | avg_top100: 0.783 | avg_sa: 2.955 | div: 0.883
+60/100 | avg_top1: 0.994 | avg_top10: 0.966 | avg_top100: 0.795 | avg_sa: 2.937 | div: 0.878
+70/100 | avg_top1: 0.994 | avg_top10: 0.971 | avg_top100: 0.806 | avg_sa: 2.958 | div: 0.878
+80/100 | avg_top1: 0.994 | avg_top10: 0.971 | avg_top100: 0.799 | avg_sa: 2.988 | div: 0.879
+90/100 | avg_top1: 0.994 | avg_top10: 0.975 | avg_top100: 0.799 | avg_sa: 3.011 | div: 0.880
+100/100 | avg_top1: 0.994 | avg_top10: 0.976 | avg_top100: 0.805 | avg_sa: 3.025 | div: 0.879
+Initial GP model training
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=reinvent seed=0 output=oracle_benchmark_results/small/carcinogens/reinvent/seed_0
+need to wait several minutes
+need to wait several minutes
+Model initialized, starting training...
+10/100 | avg_top1: 0.974 | avg_top10: 0.778 | avg_top100: 0.778 | avg_sa: 2.763 | div: 0.860
+20/100 | avg_top1: 0.988 | avg_top10: 0.871 | avg_top100: 0.669 | avg_sa: 2.856 | div: 0.872
+30/100 | avg_top1: 0.989 | avg_top10: 0.929 | avg_top100: 0.681 | avg_sa: 3.048 | div: 0.877
+40/100 | avg_top1: 0.989 | avg_top10: 0.964 | avg_top100: 0.714 | avg_sa: 3.179 | div: 0.876
+50/100 | avg_top1: 0.989 | avg_top10: 0.972 | avg_top100: 0.726 | avg_sa: 3.084 | div: 0.877
+60/100 | avg_top1: 0.989 | avg_top10: 0.973 | avg_top100: 0.725 | avg_sa: 3.043 | div: 0.876
+70/100 | avg_top1: 0.989 | avg_top10: 0.973 | avg_top100: 0.726 | avg_sa: 3.049 | div: 0.877
+80/100 | avg_top1: 0.989 | avg_top10: 0.976 | avg_top100: 0.737 | avg_sa: 3.093 | div: 0.877
+90/100 | avg_top1: 0.989 | avg_top10: 0.981 | avg_top100: 0.750 | avg_sa: 3.173 | div: 0.878
+100/100 | avg_top1: 0.995 | avg_top10: 0.985 | avg_top100: 0.748 | avg_sa: 3.176 | div: 0.878
+max oracle hit
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=reinvent_selfies seed=0 output=oracle_benchmark_results/small/carcinogens/reinvent_selfies/seed_0
+need to wait several minutes
+need to wait several minutes
+Model initialized, starting training...
+10/100 | avg_top1: 0.931 | avg_top10: 0.675 | avg_top100: 0.675 | avg_sa: 3.239 | div: 0.888
+20/100 | avg_top1: 0.988 | avg_top10: 0.874 | avg_top100: 0.698 | avg_sa: 3.257 | div: 0.881
+30/100 | avg_top1: 0.988 | avg_top10: 0.910 | avg_top100: 0.722 | avg_sa: 3.248 | div: 0.880
+40/100 | avg_top1: 0.988 | avg_top10: 0.945 | avg_top100: 0.726 | avg_sa: 3.351 | div: 0.885
+50/100 | avg_top1: 0.988 | avg_top10: 0.961 | avg_top100: 0.746 | avg_sa: 3.514 | div: 0.888
+60/100 | avg_top1: 0.988 | avg_top10: 0.961 | avg_top100: 0.738 | avg_sa: 3.518 | div: 0.890
+70/100 | avg_top1: 0.988 | avg_top10: 0.967 | avg_top100: 0.751 | avg_sa: 3.461 | div: 0.889
+80/100 | avg_top1: 0.988 | avg_top10: 0.967 | avg_top100: 0.754 | avg_sa: 3.496 | div: 0.888
+90/100 | avg_top1: 0.988 | avg_top10: 0.967 | avg_top100: 0.748 | avg_sa: 3.470 | div: 0.887
+100/100 | avg_top1: 0.988 | avg_top10: 0.967 | avg_top100: 0.742 | avg_sa: 3.452 | div: 0.887
+max oracle hit
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=mimosa seed=0 output=oracle_benchmark_results/small/carcinogens/mimosa/seed_0
+10/100 | avg_top1: 0.991 | avg_top10: 0.892 | avg_top100: 0.892 | avg_sa: 3.591 | div: 0.888
+20/100 | avg_top1: 0.991 | avg_top10: 0.956 | avg_top100: 0.849 | avg_sa: 3.393 | div: 0.879
+30/100 | avg_top1: 0.991 | avg_top10: 0.971 | avg_top100: 0.828 | avg_sa: 3.144 | div: 0.883
+40/100 | avg_top1: 0.991 | avg_top10: 0.975 | avg_top100: 0.774 | avg_sa: 2.957 | div: 0.879
+50/100 | avg_top1: 0.991 | avg_top10: 0.976 | avg_top100: 0.755 | avg_sa: 2.948 | div: 0.883
+60/100 | avg_top1: 0.991 | avg_top10: 0.981 | avg_top100: 0.753 | avg_sa: 2.962 | div: 0.883
+70/100 | avg_top1: 0.992 | avg_top10: 0.983 | avg_top100: 0.756 | avg_sa: 3.022 | div: 0.885
+80/100 | avg_top1: 0.992 | avg_top10: 0.984 | avg_top100: 0.769 | avg_sa: 2.985 | div: 0.882
+90/100 | avg_top1: 0.994 | avg_top10: 0.986 | avg_top100: 0.780 | avg_sa: 3.011 | div: 0.881
+100/100 | avg_top1: 0.994 | avg_top10: 0.988 | avg_top100: 0.789 | avg_sa: 3.060 | div: 0.882
+warm start smiles list ['OC[C@H]1CCC[NH+](Cc2cccnc2)C1', 'CC(C)CC[NH+]1CCC(CNC(=O)N2C[C@@H]3CC[C@H]2C3)CC1', 'CCC[NH+]1CC2(CC[NH+](C)CC2)C[C@@H]1C(=O)N(C)Cc1nc(C2CC2)no1', 'C[NH+](C)[C@H]1[C@@H](O)[C@@]2(C)CC[C@@H]1C2(C)C', 'Cc1ccsc1C(=O)OCCc1cccnc1', 'CC(C)C(=O)NC[C@H]1CCCN(C(=O)Cc2ccc[nH]2)C1', 'CC(=O)OC1CC[NH+](CC(C)(C)C)CC1', 'O=C(CCC(=O)N1CCC[C@H](c2ccn[nH]2)C1)c1ccccc1', 'O=C(CC(C1CC1)C1CC1)N1CCN([C@@H]2CCC[C@H]2O)CC1', 'COC(=O)c1ccc2[nH]c(-c3cccc(Cl)c3)nc2c1', 'COC(=O)[C@@]1(C)C[C@@H](CO)[C@@H](c2cccc(F)c2)[NH2+]1', 'Cc1cc(NC2CC[NH+](C)CC2)[nH+]cc1N', 'COc1ccc(Cl)cc1C(=O)N1CCc2nc([C@@H]3CC[NH+](C)C3)ncc2C1', 'CC[NH2+][C@H](Cc1cccc(Cl)c1)[C@@H]1CN(C(C)C)CCO1', 'NC(=O)[C@@]1([NH3+])CCC[C@H]1CCSc1nc2ccccc2o1', 'Cc1nn(C)cc1C[NH2+]C[C@@]1(O)CCCN(CC2CCCCC2)C1=O', 'C[C@H](c1nccs1)[NH+](C)C1CCN(C(=O)OC(C)(C)C)CC1', 'COCC[NH2+]Cc1ccco1', 'Cc1cc(C)c(C[NH2+]CCc2ccccn2)cc1C', 'CCC1CCC2(CC1)CNc1c[nH+]ccc1N2', 'C(=C/c1ccccc1)\\CN1CCC2=NN=C(c3ccc4c(c3)OCO4)[C@@H]2C1', 'CN(Cc1cc(-c2ccncc2)no1)C(=O)[C@H]1Cc2ccccc2O1', 'CCc1onc(C)c1NC(=O)N(C)[C@H]1C[C@](C)(OC)C1(C)C', 'O=C(NCc1cc2c(s1)CCCCC2)N1CC[C@@H](CCO)C1', 'C[C@H]1CC[C@@H](n2c(N)nc3c[nH+]ccc32)[C@H](C)C1', 'CCc1cc2c(S[C@@H](C)C(=O)NC(=O)NC)ncnc2s1', 'C=C=CO[C@@H]1[C@H]([C@@H]2COC(C)(C)O2)O[C@@H]2OC(C)(C)O[C@@H]21', 'CC[C@@H](CC1CCCC1)C(=O)N1CCN(C(=O)C[NH+](C)C)CC1', 'C[C@@H](Oc1ccccc1C(=O)N1CCCCC1)C(=O)NCCc1ccccc1', 'Cc1cc2nc(C)c(CCC(=O)NC[C@@H](c3ccccc3)N3CCOCC3)c(C)n2n1', 'CCS(=O)(=O)c1ccccc1C(=O)N1CCC[C@H](C)C1', 'O=C(Cc1noc(-c2cscn2)n1)Nc1ccc2c(c1)OCCO2', 'C[C@@](O)(CNC(=O)N[C@@H](c1ccccc1)C1CCCC1)CN1CCOCC1', 'COc1ccc(C(=O)N[C@@H]2CCCC[C@H]2NC(=O)[C@H]2CCCN(C(=O)c3ccccc3)C2)cc1', 'O=C(Oc1cc(F)ccc1[N+](=O)[O-])c1occc1Br', 'COc1ccc2c(c1)CCCN2C(=O)NC[C@H](C)N1CCOCC1', 'Nc1ccc(SC[C@@H]2CCCO2)nc1', 'Cc1cc(Br)ccc1SCC(=O)N1CCC(C(=O)c2ccc3c(c2)OCCO3)CC1', 'COc1cc2c(cc1OC)[C@@H](C(=O)N1CCCC1)[C@H](c1ccccc1F)N(C)C2=O', 'CCC[C@](C)(CO)NC(=O)NCc1ccc2c(c1)OCCO2', 'CC(=O)NC12C[C@H]3C[C@@H](C1)CC(C(=O)Nc1ccc4ccccc4n1)(C3)C2', 'Cc1cc(C)cc(C[C@@H](C)NC(=O)N(C)CCN2CCOCC2)c1', 'CCCN1C(=O)CCc2cc(NC(=O)N3CCN(C(=O)CC)CC3)ccc21', 'CS(=O)(=O)Cc1noc(C2(c3ccccc3)CCCC2)n1', 'COc1ccc([C@@H](CNC(=O)c2nccnc2-c2nc3ccccc3s2)[NH+]2CCCC2)cc1', 'Cc1cc(C(=O)NCCCOc2ccccc2)no1', 'C=CCN(Cc1ccc(OC)cc1)C(=O)c1cnn(-c2ccncc2)c1C', 'CCNC(=O)NC(=O)[C@H](C)Nc1ccc2c(c1)CCN2C(C)=O', 'CCC1(CC)CN(c2ccc(C(C)=O)cc2)C1', 'Cc1cc([C@H]2CCCC[C@H]2O)ccc1F']
+Generated molecules: 1149
+max oracle hit, abort ...... 
+Logging final results...
+Saving molecules...
+Running tier=small oracle=carcinogens algorithm=selfies_ga seed=0 output=oracle_benchmark_results/small/carcinogens/selfies_ga/seed_0
+10/100 | avg_top1: 0.691 | avg_top10: 0.373 | avg_top100: 0.373 | avg_sa: 5.205 | div: 0.970
+20/100 | avg_top1: 0.691 | avg_top10: 0.511 | avg_top100: 0.404 | avg_sa: 4.673 | div: 0.963
+30/100 | avg_top1: 0.691 | avg_top10: 0.567 | avg_top100: 0.380 | avg_sa: 4.552 | div: 0.963
+40/100 | avg_top1: 0.734 | avg_top10: 0.624 | avg_top100: 0.387 | avg_sa: 4.429 | div: 0.959
+50/100 | avg_top1: 0.825 | avg_top10: 0.684 | avg_top100: 0.396 | avg_sa: 4.217 | div: 0.956
+60/100 | avg_top1: 0.909 | avg_top10: 0.760 | avg_top100: 0.422 | avg_sa: 4.110 | div: 0.953
+70/100 | avg_top1: 0.958 | avg_top10: 0.828 | avg_top100: 0.453 | avg_sa: 4.089 | div: 0.953
+80/100 | avg_top1: 0.958 | avg_top10: 0.846 | avg_top100: 0.467 | avg_sa: 4.133 | div: 0.950
+90/100 | avg_top1: 0.958 | avg_top10: 0.847 | avg_top100: 0.471 | avg_sa: 4.147 | div: 0.946
+100/100 | avg_top1: 0.958 | avg_top10: 0.851 | avg_top100: 0.471 | avg_sa: 4.116 | div: 0.945
+Logging final results...
+Saving molecules...
+Benchmark config: benchmark_configs/small_admet_carcinogens_all_algorithms.yaml
+Command:
+/users/PCON0041/mey200/.conda/envs/molopt-liddia/bin/python run_molopt_oracle_tests.py --tier small --smi-file benchmark_inputs/zinc_sanity_1k.smi --output-root oracle_benchmark_results --n-jobs 1 --oracles carcinogens --algorithms available --skip-existing --continue-on-error

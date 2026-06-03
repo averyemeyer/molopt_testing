@@ -1,0 +1,26 @@
+name: small_admet_dili_tail
+description: Low-budget DILI scout for remaining slower/default algorithms.
+tier: small
+oracle_set: explicit
+oracles:
+  - dili
+algorithm_set: explicit
+algorithms:
+  - reinvent
+  - reinvent_selfies
+  - mimosa
+  - selfies_ga
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: false
+continue_on_error: true
+env:
+  PYTHONPATH: /users/PCON0041/mey200/testing
+notes:
+  objective_direction: maximize
+  oracle_transform: DILI toxicity probability is converted to 1 - toxicity
+  interpretation: higher scores mean lower predicted DILI liability
+  seeds: small tier uses seed 0
+  budget: small tier uses 100 oracle calls
+  reason: finish DILI algorithms not completed by the monolithic scout

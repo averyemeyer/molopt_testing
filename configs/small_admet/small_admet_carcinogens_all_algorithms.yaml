@@ -1,0 +1,23 @@
+name: small_admet_carcinogens_all_algorithms
+description: Low-budget carcinogenicity scout over all available/default algorithms.
+tier: small
+oracle_set: explicit
+oracles:
+  - carcinogens
+algorithm_set: default
+algorithms:
+  - available
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+env:
+  PYTHONPATH: /users/PCON0041/mey200/testing
+notes:
+  objective_direction: maximize
+  oracle_transform: carcinogenicity probability is converted to 1 - toxicity
+  interpretation: higher scores mean lower predicted carcinogenicity liability
+  seeds: small tier uses seed 0
+  budget: small tier uses 100 oracle calls
+  reason: split endpoint into its own overnight job to avoid monolithic timeout
