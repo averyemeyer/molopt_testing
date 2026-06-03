@@ -17,6 +17,7 @@ MolOpt result tree. The most useful entry points are below.
   - `top10` asks whether it can produce a robust shortlist.
   - `top100` asks whether it moves the broader candidate pool.
 - `plots/medium/` - evaluator-backed 1K cheap-oracle matrix plots for the wider algorithm set.
+  - Each oracle has `top1`, `top10`, and `top100` views.
 - `plots/small_admet/` - completed 100-call ADMET/toxicity scout plots for
   hERG, DILI, ClinTox, mutagenicity, and carcinogenicity.
 

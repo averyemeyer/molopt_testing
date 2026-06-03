@@ -25,3 +25,9 @@ Folder: `plots/medium/`
 These evaluator-backed plots cover the wider cheap-oracle benchmark matrix. Use
 them to compare algorithm behavior across more oracle classes, but treat the
 10K full plots as the stronger paper-style comparison for the selected oracles.
+
+Each medium oracle has the same top-k views:
+
+- `*_top1.png`
+- `*_top10.png`
+- `*_top100.png`
