@@ -13,17 +13,16 @@ from plot_molopt_curves import load_topk_curve
 TOP_KS = [1, 10, 100]
 
 
-def parse_result_path(path):
-    parts = path.parts
-    try:
-        idx = parts.index("oracle_benchmark_results")
-    except ValueError:
-        raise ValueError(f"Path is not under oracle_benchmark_results: {path}")
+def parse_result_path(path, root):
+    relative = path.relative_to(root)
+    parts = relative.parts
+    if len(parts) < 4:
+        raise ValueError(f"Unexpected result path under {root}: {path}")
 
-    tier = parts[idx + 1]
-    oracle = parts[idx + 2]
-    algorithm = parts[idx + 3]
-    seed = parts[idx + 4].replace("seed_", "")
+    tier = parts[0]
+    oracle = parts[1]
+    algorithm = parts[2]
+    seed = parts[3].replace("seed_", "")
     return tier, oracle, algorithm, seed
 
 
@@ -53,11 +52,11 @@ def auc_topk(path, top_k):
     return float(np.trapz(values, calls) / calls[-1])
 
 
-def summarize_file(path):
+def summarize_file(path, root):
     rows = load_scores(path)
     scores = [score for _smi, score, _call in rows]
     calls = [call for _smi, _score, call in rows]
-    tier, oracle, algorithm, seed = parse_result_path(path)
+    tier, oracle, algorithm, seed = parse_result_path(path, root)
 
     out = {
         "tier": tier,
@@ -99,7 +98,7 @@ def write_csv(rows, output):
         "path",
     ]
     with open(output, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
@@ -128,7 +127,7 @@ def main():
     args = parser.parse_args()
 
     paths = discover_paths(args.root, args.tier)
-    rows = [summarize_file(path) for path in paths]
+    rows = [summarize_file(path, Path(args.root)) for path in paths]
     rows.sort(key=lambda row: (row["tier"], row["oracle"], row["algorithm"], int(row["seed"])))
 
     write_csv(rows, Path(args.csv))

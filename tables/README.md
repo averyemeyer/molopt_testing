@@ -19,4 +19,5 @@
 - `validation_medium.csv` - result file sanity checks.
 - `audit_medium_scores.csv` - recomputed oracle-score audit.
 - `metrics_medium.csv` / `metrics_medium.md` - final top-k and AUC metrics for
-  medium runs.
+  medium runs. This includes the completed cheap-oracle matrix plus the partial
+  medium hERG slice.

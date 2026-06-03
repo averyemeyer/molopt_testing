@@ -5,7 +5,7 @@ MolOpt result tree. The most useful entry points are below.
 
 ## Narrative
 
-- `pi_meeting_summary_2026-06-02.md` - meeting-oriented summary and takeaways
+- `summary_2026-06-02.md` - meeting-oriented summary and takeaways
 - `oracle_time_run_analysis_2026-06-02.md` - explicit oracle-call, time, and
   resource analysis for planning future lead-optimizer runs
 
@@ -30,7 +30,8 @@ MolOpt result tree. The most useful entry points are below.
 - `tables/full_qed_logp_sascore_top100_thresholds.csv` - same for top100.
 - `tables/part2_evaluator/` - evaluator-backed rescoring audit metrics and
   original-vs-part2 comparison tables.
-- `tables/metrics_medium.csv` - medium 1K cheap-oracle metrics.
+- `tables/metrics_medium.csv` - medium 1K metrics: the completed cheap-oracle
+  matrix plus the partial hERG slice.
 - `tables/small_admet/` - tox-only metrics and threshold tables for the
   completed 55-run small ADMET scout.
 - `tables/coverage_medium.*`, `tables/validation_medium.csv`, and
