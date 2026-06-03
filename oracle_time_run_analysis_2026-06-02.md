@@ -99,6 +99,26 @@ mix of methods. It is most useful for rough triage:
 - 10K x 5 algorithms x 5 seeds x 1 cheap oracle: a few hours as a single Slurm
   batch, depending on early stopping and algorithm mix
 
+### Estimated Wall Time By Oracle
+
+Exact per-oracle wall times were not recorded for these first completed jobs
+because the benchmark logs did not yet write per-seed timing sidecars. The
+estimates below use job-level elapsed time and actual scored-call counts from
+`tables/metrics_full_qed_logp_sascore.csv`.
+
+| Run set | Oracle | Actual scored calls | Estimated sec/call | Estimated calls/sec | Estimated wall time |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Full 10K QED/LogP | QED | 133,515 | 0.1026 | 9.75 | 3.80 h |
+| Full 10K QED/LogP | LogP | 204,257 | 0.1026 | 9.75 | 5.82 h |
+| Full 10K SAScore | SAScore | 107,288 | 0.1327 | 7.54 | 3.96 h |
+
+QED and LogP were run in the same Slurm job, so their wall time is allocated
+proportionally by scored-call count. SAScore ran as its own job, so its estimate
+is closer to a true oracle-level job average. These are still wall-clock
+estimates, not pure oracle-function latency measurements.
+
+The CSV version is `tables/oracle_wall_time_estimates.csv`.
+
 ## Approximate Time-To-Target
 
 Using the cheap-oracle pilot rate above, a threshold reached in 1,000 oracle

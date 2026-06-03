@@ -11,6 +11,8 @@
   mean top10 curve to reach target values.
 - `full_qed_logp_sascore_top100_thresholds.csv` - oracle calls needed for the
   mean top100 curve to reach target values.
+- `oracle_wall_time_estimates.csv` - estimated wall time per oracle for the
+  completed 10K QED/LogP/SAScore pilot.
 
 ## Medium Matrix Tables
 

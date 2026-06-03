@@ -1,0 +1,4 @@
+run_set,oracle,actual_scored_calls,job_elapsed_seconds,estimated_seconds_per_call,estimated_calls_per_second,estimated_wall_hours,estimation_method
+full_10k_qed_logp,qed,133515,34648,0.1026,9.75,3.80,Allocated combined QED/LogP job wall time by actual scored-call count.
+full_10k_qed_logp,logp,204257,34648,0.1026,9.75,5.82,Allocated combined QED/LogP job wall time by actual scored-call count.
+full_10k_sascore,sascore,107288,14238,0.1327,7.54,3.96,SAScore ran as its own job, so job wall time divided by actual scored-call count.

@@ -29,6 +29,8 @@ MolOpt result tree. The most useful entry points are below.
   the mean top1 curve reaches each target threshold.
 - `tables/full_qed_logp_sascore_top10_thresholds.csv` - same for top10.
 - `tables/full_qed_logp_sascore_top100_thresholds.csv` - same for top100.
+- `tables/oracle_wall_time_estimates.csv` - estimated wall time per oracle for
+  the completed 10K QED/LogP/SAScore pilot.
 - `tables/part2_evaluator/` - evaluator-backed rescoring audit metrics and
   original-vs-part2 comparison tables.
 - `tables/metrics_medium.csv` - medium 1K metrics: the completed cheap-oracle
