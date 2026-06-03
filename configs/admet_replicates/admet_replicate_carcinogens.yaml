@@ -1,0 +1,25 @@
+name: admet_replicate_carcinogens
+description: Three-seed small-budget carcinogenicity safety replicate scout.
+tier: small_replicate
+oracles:
+  - carcinogens
+algorithms:
+  - screening
+  - graph_ga
+  - graph_mcts
+  - smiles_ga
+  - stoned
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results_admet_replicates
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+env:
+  PYTHONPATH: /users/PCON0041/mey200/testing
+notes:
+  objective_direction: maximize
+  oracle_transform: carcinogenicity probability is converted to 1 - toxicity
+  interpretation: higher score means lower predicted carcinogenicity liability
+  seeds: small_replicate tier uses seeds 0, 1, 2
+  budget: small_replicate tier uses 100 oracle calls
+  reason: replicate the ADMET scout without overwriting current plots/results

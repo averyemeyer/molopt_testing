@@ -113,6 +113,12 @@ def _toxicity(smiles):
     return predict_toxicity(smiles)
 
 
+def _toxicity_safety(smiles, endpoint):
+    """Convert toxicity probability to safety; missing predictions are unsafe."""
+    tox = _toxicity(smiles)
+    return 1.0 - _as_score(tox.get(endpoint), default=1.0)
+
+
 def qed(smiles):
     """Raw QED from evaluator; higher is better."""
     return _as_score(calculate_qed(smiles))
@@ -158,29 +164,24 @@ def rot_bonds(smiles):
 
 def herg(smiles):
     """hERG safety desirability: 1 - evaluator toxicity probability."""
-    tox = _toxicity(smiles)
-    return 1.0 - _as_score(tox.get("hERG"))
+    return _toxicity_safety(smiles, "hERG")
 
 
 def dili(smiles):
     """DILI safety desirability: 1 - evaluator toxicity probability."""
-    tox = _toxicity(smiles)
-    return 1.0 - _as_score(tox.get("DILI"))
+    return _toxicity_safety(smiles, "DILI")
 
 
 def clintox(smiles):
     """ClinTox safety desirability: 1 - evaluator toxicity probability."""
-    tox = _toxicity(smiles)
-    return 1.0 - _as_score(tox.get("ClinTox"))
+    return _toxicity_safety(smiles, "ClinTox")
 
 
 def mutagenicity(smiles):
     """Mutagenicity safety desirability: 1 - evaluator toxicity probability."""
-    tox = _toxicity(smiles)
-    return 1.0 - _as_score(tox.get("Mutagenicity"))
+    return _toxicity_safety(smiles, "Mutagenicity")
 
 
 def carcinogens(smiles):
     """Carcinogenicity safety desirability: 1 - evaluator toxicity probability."""
-    tox = _toxicity(smiles)
-    return 1.0 - _as_score(tox.get("Carcinogens"))
+    return _toxicity_safety(smiles, "Carcinogens")

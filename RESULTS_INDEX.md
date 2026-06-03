@@ -54,6 +54,12 @@ MolOpt result tree. The most useful entry points are below.
 - `scripts/rescore_molopt_results.py` - recompute saved MolOpt result scores
   with the current oracle wrappers while preserving original call numbers.
 
+## Follow-Up Configs
+
+- `configs/admet_replicates/` - separate 3-seed, 100-call ADMET replicate
+  scout configs. These write to `oracle_benchmark_results_admet_replicates`
+  and should be plotted separately from the existing one-seed ADMET scout.
+
 ## Logs
 
 - `logs/molopt-cfg-5455029.*` - completed full 10K QED/LogP pilot.

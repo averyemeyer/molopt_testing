@@ -44,6 +44,12 @@ TIERS = {
         "freq_log": 10,
         "patience": 5,
     },
+    "small_replicate": {
+        "max_oracle_calls": 100,
+        "seeds": [0, 1, 2],
+        "freq_log": 10,
+        "patience": 5,
+    },
     "medium": {
         "max_oracle_calls": 1000,
         "seeds": [0, 1, 2],
