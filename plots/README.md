@@ -4,6 +4,8 @@
 
 Folder: `plots/full/`
 
+These are the evaluator-backed plots used for the current benchmark summary.
+
 Oracles:
 
 - `qed`
@@ -20,6 +22,6 @@ Each oracle has:
 
 Folder: `plots/medium/`
 
-These plots cover the wider cheap-oracle benchmark matrix. Use them to compare
-algorithm behavior across more oracle classes, but treat the 10K full plots as
-the stronger paper-style comparison for the selected oracles.
+These evaluator-backed plots cover the wider cheap-oracle benchmark matrix. Use
+them to compare algorithm behavior across more oracle classes, but treat the
+10K full plots as the stronger paper-style comparison for the selected oracles.

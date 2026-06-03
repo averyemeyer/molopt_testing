@@ -11,17 +11,14 @@ MolOpt result tree. The most useful entry points are below.
 
 ## Plots
 
-- `plots/full/` - 10K pilot plots for `qed`, `logp`, and `sascore`
+- `plots/full/` - evaluator-backed 10K pilot plots for `qed`, `logp`, and `sascore`
   - Each oracle has `top1`, `top10`, and `top100` views.
   - `top1` asks whether the optimizer can find one standout molecule.
   - `top10` asks whether it can produce a robust shortlist.
   - `top100` asks whether it moves the broader candidate pool.
-- `plots/medium/` - 1K cheap-oracle matrix plots for the wider algorithm set.
+- `plots/medium/` - evaluator-backed 1K cheap-oracle matrix plots for the wider algorithm set.
 - `plots/small_admet/` - completed 100-call ADMET/toxicity scout plots for
   hERG, DILI, ClinTox, mutagenicity, and carcinogenicity.
-- `plots/part2_evaluator/` - separate evaluator-backed rescoring plots. These
-  preserve the original generated molecules and oracle-call order, but recompute
-  scores with evaluator-backed wrappers.
 
 ## Tables
 
@@ -31,7 +28,7 @@ MolOpt result tree. The most useful entry points are below.
   the mean top1 curve reaches each target threshold.
 - `tables/full_qed_logp_sascore_top10_thresholds.csv` - same for top10.
 - `tables/full_qed_logp_sascore_top100_thresholds.csv` - same for top100.
-- `tables/part2_evaluator/` - evaluator-backed rescoring metrics and
+- `tables/part2_evaluator/` - evaluator-backed rescoring audit metrics and
   original-vs-part2 comparison tables.
 - `tables/metrics_medium.csv` - medium 1K cheap-oracle metrics.
 - `tables/small_admet/` - tox-only metrics and threshold tables for the
