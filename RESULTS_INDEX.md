@@ -20,6 +20,8 @@ MolOpt result tree. The most useful entry points are below.
   - Each oracle has `top1`, `top10`, and `top100` views.
 - `plots/small_admet/` - completed 100-call ADMET/toxicity scout plots for
   hERG, DILI, ClinTox, mutagenicity, and carcinogenicity.
+- `plots/admet_replicates/` - 3-seed, 100-call ADMET/toxicity follow-up plots
+  for the selected algorithm subset.
 
 ## Tables
 
@@ -37,6 +39,8 @@ MolOpt result tree. The most useful entry points are below.
   matrix plus the partial hERG slice.
 - `tables/small_admet/` - tox-only metrics and threshold tables for the
   completed 55-run small ADMET scout.
+- `tables/admet_replicates/` - metrics and runtime tables for the completed
+  75-run ADMET replicate scout.
 - `tables/coverage_medium.*`, `tables/validation_medium.csv`, and
   `tables/audit_medium_scores.csv` - coverage and correctness checks for the
   medium cheap matrix.

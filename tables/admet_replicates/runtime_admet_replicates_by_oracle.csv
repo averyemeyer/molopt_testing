@@ -1,0 +1,6 @@
+oracle,n_runs,succeeded,failed,total_calls,total_elapsed_seconds,total_elapsed_minutes,seconds_per_call,calls_per_second,max_rss_gb
+carcinogens,15,15,0,1509,18851.69,314.19,12.493,0.08,1.1
+clintox,15,15,0,1509,17170.12,286.17,11.378,0.0879,1.1
+dili,15,15,0,1509,18070.73,301.18,11.975,0.0835,1.1
+herg,15,15,0,1508,18560.85,309.35,12.308,0.0812,1.09
+mutagenicity,15,15,0,1509,16608.9,276.82,11.007,0.0909,1.1
