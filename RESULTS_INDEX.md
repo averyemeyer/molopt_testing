@@ -8,6 +8,8 @@ MolOpt result tree. The most useful entry points are below.
 - `summary_2026-06-02.md` - meeting-oriented summary and takeaways
 - `oracle_time_run_analysis_2026-06-02.md` - explicit oracle-call, time, and
   resource analysis for planning future lead-optimizer runs
+- `tool_runtime_comparison.md` - short comparison of MolOpt candidate
+  generation, ADMET evaluation, and GeLLMO-C targeted generation
 
 ## Plots
 
@@ -41,6 +43,9 @@ MolOpt result tree. The most useful entry points are below.
   completed 55-run small ADMET scout.
 - `tables/admet_replicates/` - metrics and runtime tables for the completed
   75-run ADMET replicate scout.
+- `tables/molopt_generation_probe.csv` - generation/optimizer overhead from a
+  near-zero-cost deterministic oracle.
+- `tables/tool_runtime_comparison.csv` - compact cross-tool timing summary.
 - `tables/coverage_medium.*`, `tables/validation_medium.csv`, and
   `tables/audit_medium_scores.csv` - coverage and correctness checks for the
   medium cheap matrix.

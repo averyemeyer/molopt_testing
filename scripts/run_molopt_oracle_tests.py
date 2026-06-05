@@ -24,6 +24,7 @@ from liddia_oracles import (
     carcinogens,
     clintox,
     dili,
+    generation_probe,
     hba,
     hbd,
     herg,
@@ -62,6 +63,12 @@ TIERS = {
         "freq_log": 100,
         "patience": 20,
     },
+    "generation_probe": {
+        "max_oracle_calls": 500,
+        "seeds": [0],
+        "freq_log": 500,
+        "patience": 100,
+    },
 }
 
 
@@ -85,10 +92,15 @@ ADMET_ORACLES = {
     "carcinogens": carcinogens,
 }
 
+PROBE_ORACLES = {
+    "generation_probe": generation_probe,
+}
+
 
 ALL_ORACLES = {
     **CHEAP_ORACLES,
     **ADMET_ORACLES,
+    **PROBE_ORACLES,
 }
 
 

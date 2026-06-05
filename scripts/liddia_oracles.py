@@ -5,10 +5,11 @@ values. These wrappers only adapt direction where MolOpt needs a single scalar
 objective where higher is better.
 """
 
-from pathlib import Path
+import hashlib
 import math
 import pickle
 import sys
+from pathlib import Path
 
 
 def _ensure_evaluator_on_path():
@@ -160,6 +161,12 @@ def hba(smiles):
 def rot_bonds(smiles):
     """Raw rotatable-bond count from evaluator."""
     return _as_score(calculate_rot_bonds(smiles))
+
+
+def generation_probe(smiles):
+    """Near-zero-cost deterministic score for optimizer overhead timing."""
+    digest = hashlib.blake2b(smiles.encode("utf-8"), digest_size=8).digest()
+    return int.from_bytes(digest, byteorder="big") / float((1 << 64) - 1)
 
 
 def herg(smiles):

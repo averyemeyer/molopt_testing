@@ -1,0 +1,23 @@
+name: generation_overhead_probe
+description: Estimate MolOpt candidate-generation and optimizer overhead with a near-zero-cost oracle.
+tier: generation_probe
+oracles:
+  - generation_probe
+algorithms:
+  - screening
+  - graph_ga
+  - smiles_ga
+  - stoned
+  - graph_mcts
+smi_file: inputs/zinc_sanity_1k.smi
+output_root: oracle_benchmark_results_generation_probe
+n_jobs: 1
+skip_existing: true
+continue_on_error: true
+env:
+  PYTHONPATH: /users/PCON0041/mey200/testing
+notes:
+  budget: 500 unique scored molecules per algorithm
+  seeds: one seed
+  interpretation: elapsed time includes generation or selection, canonicalization, optimizer updates, and logging
+  exclusion: no physicochemical or ADMET property model is evaluated
