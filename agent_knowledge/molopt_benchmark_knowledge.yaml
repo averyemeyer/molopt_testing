@@ -1,0 +1,274 @@
+schema_version: "1.0.0"
+generated_from_repository_date: "2026-06-08"
+purpose: >
+  Internal benchmark knowledge for routing evaluator-backed MolOpt searches in
+  the LIDDIA lead optimizer. Recommendations apply to this benchmark setup and
+  are not universal optimizer rankings.
+
+benchmark_context:
+  starter_set:
+    path: inputs/zinc_sanity_1k.smi
+    molecule_count: 1000
+    seed_behavior: >
+      All runs used the same starter file. Seeds change optimizer randomness;
+      they are not different 1,000-molecule slices.
+  primary_shortlist_metric: top10
+  metric_reason: >
+    Top-10 average represents the quality of a useful candidate shortlist and
+    is less sensitive than top-1 to one exceptional molecule. Top-1 and top-100
+    remain available for best-hit and broader-library views.
+  score_contract:
+    optimizer_behavior: maximize
+    rule: >
+      Every MolOpt algorithm maximizes the scalar returned by its oracle.
+      Lower-is-better evaluator outputs must be transformed once in the wrapper.
+    wrapper_source: scripts/liddia_oracles.py
+
+objective_profiles:
+  - id: qed
+    applies_to: [qed]
+    family: bounded_desirability
+    evaluator_output:
+      meaning: quantitative estimate of drug-likeness
+      better_direction: higher
+      typical_range: [0.0, 1.0]
+    molopt_score:
+      transform: identity
+      better_direction: higher
+    standalone_policy: allowed
+    routing:
+      preferred_algorithms: [stoned, gpbo, smiles_ga]
+      baseline_algorithm: screening
+      guidance: >
+        STONED was the strongest early and final top-10 performer in the tested
+        10K setting. GPBO and SMILES GA were competitive alternatives.
+    evidence:
+      - benchmark_id: full_cheap_10k
+        strength: strong_internal
+        calls_per_run: 10000
+        seeds: 5
+        algorithms_compared: [screening, graph_ga, gpbo, smiles_ga, stoned]
+        primary_metric: auc_top10
+        observed_ranking: [stoned, gpbo, smiles_ga, screening, graph_ga]
+        key_values:
+          stoned_final_top10: 0.948031
+          stoned_auc_top10: 0.944507
+          stoned_calls_to_top10_0_94: 567
+          smiles_ga_calls_to_top10_0_94: 823
+        source_tables:
+          - tables/metrics_full_qed_logp_sascore.csv
+          - tables/full_qed_logp_sascore_top10_thresholds.csv
+    caveats:
+      - This ranking is conditional on the tested implementation, starter set, and budgets.
+      - High QED alone does not establish potency, selectivity, or safety.
+
+  - id: sascore
+    applies_to: [sascore]
+    family: transformed_desirability
+    evaluator_output:
+      meaning: synthetic accessibility score; lower means easier synthesis
+      better_direction: lower
+      typical_range: [1.0, 10.0]
+    molopt_score:
+      transform: 10 - raw_sascore
+      better_direction: higher
+    standalone_policy: allowed_with_caveats
+    routing:
+      preferred_algorithms: [graph_ga, gpbo]
+      baseline_algorithm: screening
+      guidance: >
+        Graph GA reached high synthesis-desirability scores fastest in the 10K
+        comparison; GPBO reached a similar final level more slowly.
+    evidence:
+      - benchmark_id: full_cheap_10k
+        strength: strong_internal
+        calls_per_run: 10000
+        seeds: 5
+        algorithms_compared: [screening, graph_ga, gpbo, smiles_ga, stoned]
+        primary_metric: auc_top10
+        observed_ranking: [graph_ga, gpbo, stoned, smiles_ga, screening]
+        key_values:
+          graph_ga_final_top10: 9.0
+          graph_ga_auc_top10: 8.92238
+          graph_ga_calls_to_top10_8_9: 532
+          gpbo_calls_to_top10_8_9: 2734
+        source_tables:
+          - tables/metrics_full_qed_logp_sascore.csv
+          - tables/full_qed_logp_sascore_top10_thresholds.csv
+    caveats:
+      - The optimized value is synthesis desirability, not the evaluator's raw SA score.
+      - Easier synthesis alone is not a complete lead-optimization objective.
+
+  - id: logp
+    applies_to: [logp]
+    family: target_range_property
+    evaluator_output:
+      meaning: octanol-water partition coefficient
+      better_direction: target_range
+      typical_range: null
+    molopt_score:
+      transform: clipped raw LogP in the benchmark wrapper
+      better_direction: higher
+    standalone_policy: avoid_standalone
+    routing:
+      preferred_algorithms: []
+      baseline_algorithm: screening
+      guidance: >
+        Do not route normal lead optimization to raw LogP maximization. Convert
+        the requested range to a bounded desirability score or use LogP as a
+        constraint. SMILES GA and STONED demonstrate that the raw objective is
+        readily exploited.
+    evidence:
+      - benchmark_id: full_cheap_10k
+        strength: behavior_only
+        calls_per_run: 10000
+        seeds: 5
+        algorithms_compared: [screening, graph_ga, gpbo, smiles_ga, stoned]
+        primary_metric: auc_top10
+        observed_ranking: [smiles_ga, stoned, gpbo, graph_ga, screening]
+        key_values:
+          smiles_ga_final_top10: 23.5262
+          stoned_final_top10: 27.8167
+          smiles_ga_calls_to_top10_20: 3388
+        source_tables:
+          - tables/metrics_full_qed_logp_sascore.csv
+          - tables/full_qed_logp_sascore_top10_thresholds.csv
+    caveats:
+      - Larger raw LogP is not generally better drug design.
+      - Extreme values indicate objective exploitation rather than improved lead quality.
+
+  - id: raw_physicochemical_descriptors
+    applies_to: [mol_wt, tpsa, hbd, hba, rot_bonds]
+    family: target_range_property
+    evaluator_output:
+      meaning: raw physicochemical descriptor
+      better_direction: target_range
+      typical_range: null
+    molopt_score:
+      transform: identity or benchmark-specific clipping
+      better_direction: higher
+    standalone_policy: avoid_standalone
+    routing:
+      preferred_algorithms: []
+      baseline_algorithm: screening
+      guidance: >
+        Use these properties as ranges, constraints, or bounded composite-score
+        terms. The medium matrix demonstrates optimizer response, not a valid
+        instruction to maximize each descriptor without a bound.
+    evidence:
+      - benchmark_id: medium_cheap_matrix
+        strength: behavior_only
+        calls_per_run: 1000
+        seeds: 3
+        algorithms_compared:
+          - screening
+          - graph_ga
+          - gpbo
+          - graph_mcts
+          - smiles_ga
+          - selfies_ga
+          - stoned
+          - smiles_lstm_hc
+          - reinvent
+          - mars
+          - gflownet
+        primary_metric: auc_top10
+        observed_ranking: []
+        key_values: {}
+        source_tables:
+          - tables/metrics_medium.csv
+    caveats:
+      - A high raw descriptor value can be chemically implausible or undesirable.
+      - Property-specific acceptable ranges must come from project context.
+
+  - id: toxicity_safety
+    applies_to: [herg, dili, clintox, mutagenicity, carcinogens]
+    family: transformed_safety
+    evaluator_output:
+      meaning: predicted endpoint toxicity probability
+      better_direction: lower
+      typical_range: [0.0, 1.0]
+    molopt_score:
+      transform: 1 - predicted_toxicity_probability
+      better_direction: higher
+    standalone_policy: allowed_with_caveats
+    routing:
+      preferred_algorithms: [graph_mcts, stoned, smiles_ga, graph_ga]
+      baseline_algorithm: screening
+      guidance: >
+        Treat the current rankings as endpoint-specific and preliminary. Graph
+        MCTS led AUC-top10 for clintox, DILI, hERG, and mutagenicity; SMILES GA
+        led carcinogens. Because scoring dominates runtime, use small deliberate
+        budgets, cache duplicate molecules, and reuse one multi-endpoint
+        evaluator result where possible.
+    endpoint_observations:
+      carcinogens: [smiles_ga, graph_ga, stoned, screening, graph_mcts]
+      clintox: [graph_mcts, stoned, screening, smiles_ga, graph_ga]
+      dili: [graph_mcts, smiles_ga, graph_ga, screening, stoned]
+      herg: [graph_mcts, stoned, screening, graph_ga, smiles_ga]
+      mutagenicity: [graph_mcts, screening, stoned, smiles_ga, graph_ga]
+    evidence:
+      - benchmark_id: admet_replicate_scout
+        strength: preliminary
+        calls_per_run: 100
+        seeds: 3
+        algorithms_compared: [screening, graph_ga, graph_mcts, smiles_ga, stoned]
+        primary_metric: auc_top10
+        observed_ranking: []
+        key_values:
+          seconds_per_scored_molecule_min: 11.007
+          seconds_per_scored_molecule_max: 12.493
+          runs_per_endpoint: 15
+        source_tables:
+          - tables/admet_replicates/metrics_admet_replicates.csv
+          - tables/admet_replicates/runtime_admet_replicates_by_oracle.csv
+    caveats:
+      - These are model predictions, not experimental toxicity measurements.
+      - The 100-call, 3-seed study is a scout and does not establish stable universal rankings.
+      - Curves can be noisy because model predictions are less smooth and candidate batches differ by algorithm.
+
+algorithm_profiles:
+  - id: screening
+    role: fixed-pool baseline
+    observed_generation_seconds_per_molecule: 0.002317
+  - id: graph_mcts
+    role: graph search; strongest preliminary ADMET scout performance
+    observed_generation_seconds_per_molecule: 0.001913
+  - id: stoned
+    role: fast SELFIES mutation search; strong QED and competitive ADMET scout
+    observed_generation_seconds_per_molecule: 0.002803
+  - id: graph_ga
+    role: robust graph genetic search; strong SA-desirability result
+    observed_generation_seconds_per_molecule: 0.00898
+  - id: smiles_ga
+    role: SMILES genetic search; strong but more exploitative on raw LogP
+    observed_generation_seconds_per_molecule: 0.0903
+
+runtime_model:
+  generation_probe:
+    evidence_strength: preliminary
+    calls_per_run: 500
+    seeds: 1
+    source_table: tables/molopt_generation_probe.csv
+    interpretation: >
+      These values estimate candidate generation plus optimizer bookkeeping
+      under a near-zero-cost oracle. They are not end-to-end lead-optimization
+      runtimes.
+  admet_scoring:
+    evidence_strength: preliminary
+    seconds_per_scored_molecule_range: [11.007, 12.493]
+    resource_context: same Slurm benchmark resource class, including one requested GPU
+    source_table: tables/admet_replicates/runtime_admet_replicates_by_oracle.csv
+    interpretation: >
+      Evaluator-backed toxicity prediction dominated MolOpt generation time in
+      these runs. Approximate runtime is scored molecules multiplied by the
+      endpoint rate, but model loading, caching, duplicates, and queue time can
+      change wall time.
+
+agent_rules:
+  - Never invert an evaluator-backed wrapper score without checking its transform.
+  - Never equate raw LogP or raw descriptor maximization with general lead improvement.
+  - Report the tested call budget and evidence strength with every algorithm recommendation.
+  - Prefer top-10 average for shortlist quality; use top-1 for best-hit questions and top-100 for library breadth.
+  - Cache evaluator results by canonical molecule and reuse multi-endpoint toxicity predictions.
+  - Return candidates, transformed scores, raw property values, oracle calls, elapsed time, and constraints used.

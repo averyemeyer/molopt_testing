@@ -80,6 +80,8 @@ inputs/zinc_sanity_1k.smi
 
 ## Key Files
 
+- `agent_knowledge/` - structured benchmark guidance for lead-optimizer prompts,
+  retrieval, and tool routing
 - `summary_2026-06-02.md` - plain-language summary and takeaways
 - `RESULTS_INDEX.md` - where plots, tables, configs, logs, and scripts live
 - `RUNNING.md` - setup, installation, Slurm, output, and plotting commands
@@ -119,3 +121,8 @@ implementation should treat MolOpt as a budgeted search tool, keep evaluator
 definitions as the source of truth, pass explicit objective direction and
 constraints, return top-k molecules with call counts, and cache evaluator
 results for repeated molecules and multi-endpoint toxicity requests.
+
+The first agent-facing contract is in
+`agent_knowledge/molopt_benchmark_knowledge.yaml`. Its generated JSON mirror can
+be loaded directly by tool code, while `agent_knowledge/PROMPT_CONTEXT.md`
+provides a concise prompt-ready version.

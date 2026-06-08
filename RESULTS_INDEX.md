@@ -3,6 +3,15 @@
 This repository keeps a curated benchmark record rather than the full raw
 MolOpt result tree. The most useful entry points are below.
 
+## Agent-Facing Summary
+
+- `agent_knowledge/molopt_benchmark_knowledge.yaml` - reviewed, human-editable
+  benchmark facts and routing guidance
+- `agent_knowledge/molopt_benchmark_knowledge.json` - generated machine-readable
+  mirror for lead-optimizer code or retrieval
+- `agent_knowledge/PROMPT_CONTEXT.md` - concise prompt-ready context
+- `agent_knowledge/schema.json` - validation contract for the structured files
+
 ## Narrative
 
 - `summary_2026-06-02.md` - meeting-oriented summary and takeaways
