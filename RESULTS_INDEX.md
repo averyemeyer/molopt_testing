@@ -6,6 +6,10 @@ MolOpt result tree. The most useful entry points are below.
 ## Narrative
 
 - `summary_2026-06-02.md` - meeting-oriented summary and takeaways
+- `RUNNING.md` - clean-clone installation, local/Slurm execution, outputs, and
+  post-processing commands
+- `LOCAL_MOLOPT_CHANGES.md` - upstream commit and explanations for every
+  reusable tracked-code change
 - `oracle_time_run_analysis_2026-06-02.md` - explicit oracle-call, time, and
   resource analysis for planning future lead-optimizer runs
 - `tool_runtime_comparison.md` - short comparison of MolOpt candidate
@@ -52,8 +56,15 @@ MolOpt result tree. The most useful entry points are below.
 
 ## Scripts
 
+- `scripts/install_into_molopt.sh` - apply the compatibility patch and copy the
+  curated harness/configs/starter set into a clean upstream clone.
 - `scripts/run_molopt_oracle_tests.py` - benchmark runner. New future runs write
   `benchmark_run_metadata.json` sidecars with elapsed seconds and resource data.
+- `scripts/time_direct_vs_oracle_admet.py` and
+  `scripts/run_direct_vs_oracle_timing.sh` - same-resource direct evaluator
+  versus wrapper timing.
+- `scripts/run_generation_overhead_probe.slurm` - near-zero-cost MolOpt
+  generation/optimizer timing launcher.
 - `scripts/summarize_molopt_metrics.py` - per-run final top-k and AUC tables.
 - `scripts/summarize_molopt_thresholds.py` - call-to-threshold summaries.
 - `scripts/plot_molopt_benchmark_tier.py` - multi-algorithm comparison plots.
@@ -62,6 +73,16 @@ MolOpt result tree. The most useful entry points are below.
   wrappers only adapt direction where MolOpt needs higher-is-better objectives.
 - `scripts/rescore_molopt_results.py` - recompute saved MolOpt result scores
   with the current oracle wrappers while preserving original call numbers.
+
+## Reproducibility
+
+- `environment/molopt-liddia.yml` - curated environment definition.
+- `environment/molopt-liddia-pip-freeze.txt` - full June 8, 2026 working
+  environment snapshot for provenance.
+- `patches/mol-opt-compatibility.patch` - changes to `molopt/base.py`, MIMOSA,
+  and SelfiesGA against upstream commit `63382d7`.
+- `inputs/zinc_sanity_1k.smi` - matched starter set copied into
+  `benchmark_inputs/` by the installer.
 
 ## Follow-Up Configs
 

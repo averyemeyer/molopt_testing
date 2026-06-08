@@ -1,0 +1,32 @@
+name: molopt-liddia
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - rdkit
+  - pip:
+      - admet_ai==1.4.0
+      - botorch==0.8.5
+      - chemfunc==1.0.12
+      - chemprop==1.6.1
+      - descriptastorus==2.8.0
+      - gpytorch==1.10
+      - joblib==1.3.2
+      - matplotlib==3.7.4
+      - networkx==3.1
+      - nltk==3.8.1
+      - numpy==1.24.4
+      - pandas==2.1.4
+      - pyro-ppl==1.8.6
+      - PyTDC==0.4.1
+      - PyYAML==6.0.1
+      - scikit-learn==1.3.2
+      - scipy==1.10.1
+      - seaborn==0.13.2
+      - selfies==2.1.1
+      - tensorboardX==2.6.2.2
+      - torch==2.5.0
+      - tqdm==4.67.3
+      - git+https://github.com/PatWalters/rd_filters.git@11a3b31f5b3669834bb916d8ed4422e69e455211

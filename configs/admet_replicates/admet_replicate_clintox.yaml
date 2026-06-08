@@ -14,8 +14,6 @@ output_root: oracle_benchmark_results_admet_replicates
 n_jobs: 1
 skip_existing: true
 continue_on_error: true
-env:
-  PYTHONPATH: /users/PCON0041/mey200/testing
 notes:
   objective_direction: maximize
   oracle_transform: ClinTox toxicity probability is converted to 1 - toxicity

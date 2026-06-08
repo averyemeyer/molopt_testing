@@ -9,13 +9,11 @@ algorithms:
   - smiles_ga
   - stoned
   - graph_mcts
-smi_file: inputs/zinc_sanity_1k.smi
+smi_file: benchmark_inputs/zinc_sanity_1k.smi
 output_root: oracle_benchmark_results_generation_probe
 n_jobs: 1
 skip_existing: true
 continue_on_error: true
-env:
-  PYTHONPATH: /users/PCON0041/mey200/testing
 notes:
   budget: 500 unique scored molecules per algorithm
   seeds: one seed

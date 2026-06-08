@@ -7,6 +7,36 @@ The goal is not to declare one optimizer universally best. The goal is to learn
 which MolOpt algorithms are useful for different LIDDIA oracle types, how much
 they cost to run, and how the agent should describe or route them.
 
+It also contains the environment record, compatibility patch, benchmark
+harness, and running instructions needed to reproduce the study from a clean
+upstream MolOpt clone.
+
+## Quick Start
+
+The tested upstream base is:
+
+```text
+wenhao-gao/mol-opt
+commit 63382d78890e910080ef9a9b3b6d04a4552aff85
+```
+
+From a workspace containing sibling `evaluator/`, `mol-opt/`, and
+`molopt_testing/` directories:
+
+```bash
+conda env create -f molopt_testing/environment/molopt-liddia.yml
+conda activate molopt-liddia
+
+bash molopt_testing/scripts/install_into_molopt.sh mol-opt
+
+cd mol-opt
+python run_molopt_benchmark_config.py \
+  benchmark_configs/medium_cheap.yaml \
+  --dry-run
+```
+
+Full local and Slurm instructions are in `RUNNING.md`.
+
 ## Main Questions
 
 1. Are the LIDDIA oracle wrappers defined consistently with the evaluator?
@@ -42,7 +72,7 @@ they cost to run, and how the agent should describe or route them.
   - near-zero-cost MolOpt generation-overhead probe
   - GeLLMO-C model load and multi-candidate generation timing
 
-All benchmark runs use the same 1,000-SMILES starter file:
+All MolOpt optimization benchmark runs use the same 1,000-SMILES starter file:
 
 ```text
 inputs/zinc_sanity_1k.smi
@@ -52,6 +82,10 @@ inputs/zinc_sanity_1k.smi
 
 - `summary_2026-06-02.md` - plain-language summary and takeaways
 - `RESULTS_INDEX.md` - where plots, tables, configs, logs, and scripts live
+- `RUNNING.md` - setup, installation, Slurm, output, and plotting commands
+- `LOCAL_MOLOPT_CHANGES.md` - exact changes made to the upstream MolOpt clone
+- `environment/` - Conda setup and complete working package snapshot
+- `patches/mol-opt-compatibility.patch` - reusable upstream compatibility patch
 - `oracle_time_run_analysis_2026-06-02.md` - threshold/time/resource details
 - `tool_runtime_comparison.md` - concise MolOpt, evaluator, and GeLLMO-C timing comparison
 - `scripts/liddia_oracles.py` - evaluator-backed MolOpt oracle wrappers
@@ -77,3 +111,11 @@ cost about 11-13 seconds per unique molecule. GeLLMO-C generated a targeted
 batch of 5 candidates in about 4.7 seconds after model warm-up. These tools are
 therefore complementary: generation is relatively cheap, while evaluator
 scoring is the main runtime bottleneck.
+
+## Handoff To LIDDIA
+
+The benchmark stage is complete enough to support tool integration. The next
+implementation should treat MolOpt as a budgeted search tool, keep evaluator
+definitions as the source of truth, pass explicit objective direction and
+constraints, return top-k molecules with call counts, and cache evaluator
+results for repeated molecules and multi-endpoint toxicity requests.

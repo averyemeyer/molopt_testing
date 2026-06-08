@@ -23,3 +23,12 @@
 - `metrics_medium.csv` / `metrics_medium.md` - final top-k and AUC metrics for
   medium runs. This includes the completed cheap-oracle matrix plus the partial
   medium hERG slice.
+
+## Runtime Tables
+
+- `admet_replicates/runtime_admet_replicates_by_oracle.csv` - aggregate ADMET
+  wall time and seconds per scored molecule.
+- `molopt_generation_probe.csv` - candidate-generation/optimizer overhead with
+  a near-zero-cost deterministic oracle.
+- `tool_runtime_comparison.csv` - compact MolOpt, evaluator, and GeLLMO-C
+  timing comparison.
